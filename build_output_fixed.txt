@@ -1,0 +1,54 @@
+﻿
+> danieldusek@0.0.3 build
+> vite build
+
+[36mvite v7.1.3 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+[32mÔťô[39m 182 modules transformed.
+rendering chunks...
+[36mvite v7.1.3 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔťô[39m 150 modules transformed.
+rendering chunks...
+computing gzip size...
+[2m.svelte-kit/output/client/[22m[32m_app/version.json                       [39m[1m[2m 0.03 kB[22m[1m[22m[2m Ôöé gzip:  0.05 kB[22m
+[2m.svelte-kit/output/client/[22m[32m.vite/manifest.json                     [39m[1m[2m 3.19 kB[22m[1m[22m[2m Ôöé gzip:  0.59 kB[22m
+[2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/0.CzNyDu_A.css    [39m[1m[2m29.99 kB[22m[1m[22m[2m Ôöé gzip:  5.96 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/C2lDK9Xh.js       [39m[1m[2m 0.03 kB[22m[1m[22m[2m Ôöé gzip:  0.05 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DsnmJJEf.js       [39m[1m[2m 0.07 kB[22m[1m[22m[2m Ôöé gzip:  0.08 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/start.yaiFZL-j.js  [39m[1m[2m 0.08 kB[22m[1m[22m[2m Ôöé gzip:  0.09 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/3.B-pEaPgZ.js      [39m[1m[2m 0.30 kB[22m[1m[22m[2m Ôöé gzip:  0.22 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/1.7NEFKZUL.js      [39m[1m[2m 1.02 kB[22m[1m[22m[2m Ôöé gzip:  0.58 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/0.aWbjoUIQ.js      [39m[1m[2m 1.46 kB[22m[1m[22m[2m Ôöé gzip:  0.89 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/W5XDk96q.js       [39m[1m[2m 6.69 kB[22m[1m[22m[2m Ôöé gzip:  3.08 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/2.ClEQ10U-.js      [39m[1m[2m 7.37 kB[22m[1m[22m[2m Ôöé gzip:  1.69 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/app.BgIyTI_I.js    [39m[1m[2m 8.19 kB[22m[1m[22m[2m Ôöé gzip:  3.71 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BVg-OgTR.js       [39m[1m[2m10.48 kB[22m[1m[22m[2m Ôöé gzip:  3.86 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/LeMWert8.js       [39m[1m[2m23.57 kB[22m[1m[22m[2m Ôöé gzip:  9.16 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/HKpy9t9d.js       [39m[1m[2m31.39 kB[22m[1m[22m[2m Ôöé gzip: 12.36 kB[22m
+[32mÔťô built in 969ms[39m
+[2m.svelte-kit/output/server/[22m[32m.vite/manifest.json                         [39m[1m[2m  3.06 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_layout.CzNyDu_A.css  [39m[1m[2m 29.99 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/hotovo/_page.svelte.js        [39m[1m[2m  0.29 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36minternal.js                                 [39m[1m[2m  0.33 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/environment.js                       [39m[1m[2m  0.62 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.svelte.js             [39m[1m[2m  0.87 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/utils.js                             [39m[1m[2m  1.15 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/equality.js                          [39m[1m[2m  1.23 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/fallbacks/error.svelte.js           [39m[1m[2m  1.33 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/shared.js                            [39m[1m[2m  1.35 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/context.js                           [39m[1m[2m  1.70 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/exports.js                           [39m[1m[2m  6.89 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/_page.svelte.js               [39m[1m[2m  7.40 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/members.js                           [39m[1m[2m  7.46 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mremote-entry.js                             [39m[1m[2m 10.44 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/index.js                             [39m[1m[2m 25.61 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/internal.js                          [39m[1m[2m 75.82 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mindex.js                                    [39m[1m[2m121.34 kB[22m[1m[22m
+[32mÔťô built in 3.88s[39m
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-auto
+  Could not detect a supported production environment. See https://svelte.dev/docs/kit/adapters to learn how to configure your app to run on the platform of your choosing
+  Ôťö done

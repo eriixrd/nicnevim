@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Hero from "../../hotovopage/hero.svelte";
-  import Lastbugs from "../../hotovopage/lastbugs.svelte";
+  import Hero from "../../landingpage/hero.svelte";
+  import Members from "../../landingpage/members.svelte";
 </script>
 
 <main>
   <Hero />
-  <Lastbugs />
+  <Members />
 </main>
