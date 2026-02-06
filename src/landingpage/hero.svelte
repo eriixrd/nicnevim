@@ -18,7 +18,7 @@
                 <img
                     src="/assets/icons/Star.svg"
                     alt="Star"
-                    class="w-[16.47px] h-[15.92px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
+                    class="w-[16.47px] md:w-[17.29px] h-[15.92px] md:h-[16.72px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
                 />
             {/each}
         </div>
@@ -27,21 +27,22 @@
             class="relative p-[1px] z-10 rounded-[10px] bg-gradient-to-tl from-[#9d8ec7] via-transparent to-[#9d8ec7] mt-2.5 mx-auto w-fit"
         >
             <div
-                class="bg-[#120b2e]/60 backdrop-blur-md rounded-[10px] py-[4.5px] px-3 flex items-center justify-center gap-[5px]"
+                class="bg-[#120b2e]/60 backdrop-blur-md rounded-[10px] py-[4.5px] md:py-[4.725px] px-3 md:px-[12.6px] flex items-center justify-center gap-[5px] md:gap-[5.25px]"
             >
                 <img
                     src="/assets/persons/Ppls.svg"
                     alt="Group"
-                    class="w-[40px] h-[17px]"
+                    class="w-[40px] md:w-[42px] h-[17px] md:h-[17.85px]"
                 />
-                <span class="text-[#ffffff] font-medium text-[14px]"
+                <span
+                    class="text-[#ffffff] font-medium text-[14px] md:text-[14.7px]"
                     >450+ Aktivních investorů</span
                 >
             </div>
         </div>
 
         <h1
-            class="text-white text-center font-bold text-[36px] md:text-[40px] mt-2.5 max-w-[950px] leading-tight z-10 px-4"
+            class="text-white text-center font-extrabold text-[36px] md:text-[40px] mt-2.5 max-w-[950px] leading-tight z-10 px-4"
         >
             Sledujte <span class="text-[#FFBA00]">celé mé<br />portfolio</span>
             a všechny<br />obchody živě
@@ -49,7 +50,7 @@
         </h1>
 
         <p
-            class="text-white text-center font-medium text-[20px] md:text-[24px] mt-2.5 max-w-[900px] leading-[150%] z-10 px-4"
+            class="text-white text-center font-medium md:font-normal text-[20px] md:text-[24px] mt-2.5 max-w-[900px] leading-[150%] z-10 px-4"
         >
             Naučte se moji opční strategii<br />
             přímo z praxe skrze reálné obchody,<br />
@@ -61,7 +62,7 @@
             class="relative w-full md:w-full max-w-[800px] mt-4 z-10 mx-auto px-4"
         >
             <div
-                class="absolute inset-0 bg-[#6633EE]/40 blur-[50px] -z-10"
+                class="absolute inset-0 bg-[#6633EE]/40 blur-[50px] md:blur-[100px] md:scale-100 -z-10"
             ></div>
             <div
                 class="relative p-[1px] rounded-[20px] shadow-2xl overflow-hidden aspect-video"
@@ -101,7 +102,7 @@
         </div>
 
         <button
-            class="mt-5 px-13 py-3.5 bg-[#FFC300] text-[#000000] font-bold text-[18px] rounded-[10px] hover:bg-[#FFD300] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 z-10 shadow-lg"
+            class="mt-5 mb-20 px-13 py-3.5 bg-[#FFC300] text-[#000000] font-bold text-[18px] rounded-[10px] transition-all duration-200 z-10 shadow-lg"
         >
             Chci vědět víc!
         </button>
