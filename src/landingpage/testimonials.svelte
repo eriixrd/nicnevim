@@ -43,7 +43,7 @@
     }
 </script>
 
-<section class="bg-[#111116] w-full">
+<section class="bg-[#111116] z-10 w-full">
     <div
         class="relative w-full flex flex-col items-center justify-center pt-[70px] pb-10 px-4"
     >
@@ -109,7 +109,7 @@
                 {#each Array(totalPages) as _, i}
                     <button
                         on:click={() => setPage(i)}
-                        class="w-2.5 h-2.5 rounded-full transition-all duration-300 {currentIndex ===
+                        class="w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 {currentIndex ===
                         i
                             ? 'bg-[#ffffff]/80 w-6'
                             : 'bg-[#ffffff]/20 hover:bg-white/40'}"
@@ -122,7 +122,7 @@
             <div class="flex pb-5 gap-4">
                 <button
                     on:click={prev}
-                    class="hover:scale-110 active:scale-95 transition-all duration-200"
+                    class="cursor-pointer transition-all duration-200"
                     aria-label="Previous testimonials"
                 >
                     <img
@@ -134,7 +134,7 @@
                 </button>
                 <button
                     on:click={next}
-                    class="hover:scale-110 active:scale-95 transition-all duration-200"
+                    class="cursor-pointer transition-all duration-200"
                     aria-label="Next testimonials"
                 >
                     <img

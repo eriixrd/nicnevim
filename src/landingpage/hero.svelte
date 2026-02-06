@@ -102,7 +102,7 @@
         </div>
 
         <button
-            class="mt-5 mb-20 px-13 py-3.5 bg-[#FFC300] text-[#000000] font-bold text-[18px] rounded-[10px] transition-all duration-200 z-10 shadow-lg"
+            class="mt-5 mb-20 px-13 py-3.5 bg-[#FFC300] text-[#000000] font-bold text-[18px] rounded-[10px] cursor-pointer transition-all duration-200 z-10 shadow-lg"
         >
             Chci vědět víc!
         </button>
