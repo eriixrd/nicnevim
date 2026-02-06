@@ -5,7 +5,7 @@
 
 <section>
     <div
-        class="absolute top-0 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 bg-[#FFBA00]/65 blur-[70px] pointer-events-none"
+        class="absolute top-0 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 bg-[#FFBA00]/50 blur-[70px] pointer-events-none"
     ></div>
     <div
         class="relative flex flex-col items-center justify-center w-full max-w-full sm:px-0"
@@ -34,7 +34,8 @@
                 alt="Group"
                 class="w-[40px] h-[17px] md:w-[42px] md:h-[17.85px]"
             />
-            <span class="text-[14px] md:text-[14.7px] text-white font-medium"
+            <span
+                class="text-[14px] md:text-[14.7px] text-white font-medium leading-none"
                 >450+ Aktivních investorů</span
             >
         </Tag>
@@ -60,7 +61,7 @@
             class="relative z-10 mx-auto mt-4 px-4 w-full md:w-full max-w-[800px]"
         >
             <div
-                class="-z-10 absolute inset-0 bg-[#6633EE]/40 blur-[50px] md:blur-[100px] md:scale-100"
+                class="-z-10 absolute inset-0 bg-[#6633EE]/30 blur-[50px] md:blur-[80px] md:scale-100"
             ></div>
             <div
                 class="relative rounded-[20px] overflow-hidden shadow-2xl aspect-video p-px"
@@ -76,33 +77,41 @@
             </div>
         </div>
 
-        <div
-            class="z-10 flex flex-wrap items-center justify-center mt-5 px-4 gap-8 md:gap-16"
-        >
-            <img
-                src="/assets/addpics/lclogo.png"
-                alt="Forbes Logo"
-                class="h-[58px] md:h-[70px] w-auto opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
-                draggable="false"
-            />
-            <img
-                src="/assets/addpics/forbeslogo.png"
-                alt="LC Logo"
-                class="h-[44px] md:h-[45px] w-auto opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
-                draggable="false"
-            />
-            <img
-                src="/assets/addpics/oklogo.png"
-                alt="OK Logo"
-                class="h-[45px] md:h-[60px] w-auto opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
-                draggable="false"
-            />
-        </div>
+        <div class="z-10 flex flex-col items-center mt-5 mb-20 w-full px-4">
+            <div class="flex items-center justify-center w-full mb-5">
+                <div class="flex-1 flex justify-end">
+                    <img
+                        src="/assets/addpics/lclogo.png"
+                        alt="LC Logo"
+                        class="w-[53px] h-[80px] mr-[42px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        draggable="false"
+                    />
+                </div>
 
-        <button
-            class="z-10 mt-5 mb-20 px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-lg cursor-pointer transition-all duration-200"
-        >
-            Chci vědět víc!
-        </button>
+                <div class="flex-none">
+                    <img
+                        src="/assets/addpics/forbeslogo.png"
+                        alt="Forbes Logo"
+                        class="w-[169px] h-[43px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        draggable="false"
+                    />
+                </div>
+
+                <div class="flex-1 flex justify-start">
+                    <img
+                        src="/assets/addpics/oklogo.png"
+                        alt="OK Logo"
+                        class="w-[63px] h-[44px] ml-[34px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        draggable="false"
+                    />
+                </div>
+            </div>
+
+            <button
+                class="px-13 py-3.5 bg-[#FFC300] hover:bg-[#DEAA00] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-lg cursor-pointer transition-all duration-200"
+            >
+                Chci vědět víc!
+            </button>
+        </div>
     </div>
 </section>

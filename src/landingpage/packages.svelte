@@ -65,7 +65,8 @@
         <!-- Main Tag -->
         <Tag className="mx-auto">
             <AppleEmoji symbol="🔒" size={17} />
-            <span class="text-[14px] md:text-[14.7px] text-white font-medium"
+            <span
+                class="text-[14px] md:text-[14.7px] text-white font-medium leading-none"
                 >Uzavřená komunita</span
             >
         </Tag>
@@ -92,12 +93,17 @@
 
         <!-- Package Cards Container -->
         <div
-            class="z-10 flex flex-col items-center justify-center w-full max-w-[400px] md:max-w-[900px] mx-auto mt-5 gap-8 md:flex-row md:items-stretch"
+            class="z-10 flex flex-col md:flex-row items-center justify-center gap-8 mx-auto mt-5 w-full max-w-[400px] md:max-w-[900px]"
         >
             {#each packages as pkg}
                 <div
-                    class="group relative w-full p-px rounded-[20px] bg-[#1C1D19] {pkg.shadowClass}"
+                    class="group relative w-full p-px rounded-[20px] bg-[#1C1D19]"
                 >
+                    <!-- Shadow Layer -->
+                    <div
+                        class="absolute inset-0 rounded-[20px] z-[-1] {pkg.shadowClass}"
+                    ></div>
+
                     <!-- Corner Highlight / Border Stroke -->
                     <div
                         class="absolute inset-0 rounded-[20px] bg-linear-to-tl {pkg.gradientBorder} pointer-events-none"
@@ -123,7 +129,7 @@
                         </p>
 
                         <button
-                            class="mt-5 w-[85%] py-2 bg-[#FFC300] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200"
+                            class="mt-5 w-[85%] py-2 bg-[#FFC300] hover:bg-[#DEAA00] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200"
                         >
                             {pkg.buttonText}
                         </button>
@@ -137,7 +143,7 @@
                                     />
                                 {/if}
                                 <span
-                                    class="text-[13px] md:text-[14px] text-white font-medium"
+                                    class="text-[13px] md:text-[14px] text-white font-medium leading-none"
                                     >{pkg.tagText}</span
                                 >
                             </Tag>
@@ -146,7 +152,7 @@
                         <div class="flex flex-col w-[85%] mt-8 gap-[15px]">
                             {#if pkg.type === "annual"}
                                 <p
-                                    class="mb-2 text-[16px] md:text-[17px] text-white font-medium leading-[1.25]"
+                                    class="mb-2 text-[16px] text-white font-medium leading-[1.25]"
                                 >
                                     {@html annualHeading}
                                 </p>
@@ -157,10 +163,10 @@
                                     <img
                                         src="/assets/icons/Checkmark.png"
                                         alt="Check"
-                                        class="shrink-0 w-[15px] h-[15px] mt-[3px]"
+                                        class="shrink-0 w-[15px] h-[15px] mt-[2.6px]"
                                     />
                                     <span
-                                        class="text-[14px] md:text-[15px] text-white font-medium leading-[1.25]"
+                                        class="text-[16px] text-white font-medium leading-[1.25]"
                                     >
                                         {@html feature}
                                     </span>

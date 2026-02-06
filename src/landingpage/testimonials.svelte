@@ -91,12 +91,13 @@
                 >
                     {#each visibleItems as id}
                         <div
-                            class="w-full max-w-[1000px] md:max-w-full py-2.5 px-2 rounded-[25px] bg-[#000000] overflow-hidden"
+                            class="w-full max-w-[1000px] md:max-w-full py-2.5 px-2 rounded-[25px] overflow-hidden"
+                            style="background: linear-gradient(180deg, #0A0A0A 10%, #000000 100%);"
                         >
                             <img
                                 src="/assets/testimonials/Group {id}.png"
                                 alt="Testimonial {id}"
-                                class="block w-full h-auto select-none pointer-events-none"
+                                class="block w-full h-auto select-none pointer-events-none mix-blend-lighten"
                                 draggable="false"
                             />
                         </div>
