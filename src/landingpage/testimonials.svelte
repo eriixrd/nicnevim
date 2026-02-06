@@ -1,30 +1,32 @@
 <script lang="ts">
     import { fade, fly } from "svelte/transition";
-
     import { onMount } from "svelte";
 
-    let currentIndex = 0;
-    const items = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]; // Ujistil jsem se, že je tu dostatek ID pro testování
-    let itemsPerPage = 6;
-    let totalPages = Math.ceil(items.length / itemsPerPage);
+    let currentIndex = $state(0);
+    const items = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43];
+    let itemsPerPage = $state(6);
+    let totalPages = $derived(Math.ceil(items.length / itemsPerPage));
 
     onMount(() => {
         const updateItemsPerPage = () => {
             itemsPerPage = window.innerWidth < 768 ? 3 : 6;
-            totalPages = Math.ceil(items.length / itemsPerPage);
-            // Reset indexu pokud by byl mimo rozsah po změně velikosti
-            if (currentIndex >= totalPages) currentIndex = 0;
+            // currentIndex reset if out of bounds
+            if (currentIndex >= Math.ceil(items.length / itemsPerPage)) {
+                currentIndex = 0;
+            }
         };
         updateItemsPerPage();
         window.addEventListener("resize", updateItemsPerPage);
         return () => window.removeEventListener("resize", updateItemsPerPage);
     });
 
-    let direction = 1;
+    let direction = $state(1);
 
-    $: visibleItems = items.slice(
-        currentIndex * itemsPerPage,
-        currentIndex * itemsPerPage + itemsPerPage,
+    let visibleItems = $derived(
+        items.slice(
+            currentIndex * itemsPerPage,
+            currentIndex * itemsPerPage + itemsPerPage,
+        ),
     );
 
     function next() {
@@ -43,33 +45,34 @@
     }
 </script>
 
-<section class="bg-[#111116] z-10 w-full">
+<section class="z-10 w-full bg-[#111116] overflow-hidden">
     <div
-        class="relative w-full flex flex-col items-center justify-center pt-[70px] pb-10 px-4"
+        class="relative flex flex-col items-center justify-center w-full px-4 pt-[70px] pb-10"
     >
         <!-- Glow effect -->
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] bg-[#AFAAFF]/25 blur-[150px] rounded-full pointer-events-none z-0"
+            class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/25 blur-[150px] pointer-events-none z-0"
         ></div>
-        <div class="flex justify-center gap-[5px] z-10">
+
+        <div class="z-10 flex justify-center gap-[5px]">
             {#each Array(5) as _}
                 <img
                     src="/assets/icons/Star.svg"
                     alt="Star"
-                    class="w-[16.47px] md:w-[17.29px] h-[15.92px] md:h-[16.72px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
+                    class="w-[16.47px] h-[15.92px] md:w-[17.29px] md:h-[16.72px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
                 />
             {/each}
         </div>
 
         <h1
-            class="text-white text-center font-extrabold text-[36px] md:text-[40px] mt-2.5 max-w-[950px] leading-tight z-10"
+            class="z-10 mt-2.5 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             Jak komunitu<br />hodnotí
             <span class="text-[#FFBA00]">členové?</span>
         </h1>
 
         <p
-            class="text-white text-center font-medium md:font-normal text-[20px] md:text-[24px] mt-2.5 max-w-[900px] leading-[150%] z-10 px-4"
+            class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Už více než 450 investorů se učí,<br />
             jak využít opce jako doplněk svého<br />
@@ -78,22 +81,22 @@
         </p>
 
         <div
-            class="mt-8 w-full max-w-[98%] mx-auto grid grid-cols-1 grid-rows-1 overflow-visible z-10"
+            class="z-10 grid grid-cols-1 grid-rows-1 w-full max-w-[98%] mx-auto mt-8 overflow-visible"
         >
             {#key currentIndex}
                 <div
-                    class="col-start-1 row-start-1 w-full grid grid-cols-1 md:grid-cols-3 justify-items-center gap-6 max-w-[1200px] mx-auto"
+                    class="col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-3 justify-items-center w-full max-w-[1200px] mx-auto gap-6"
                     in:fly={{ x: 40 * direction, duration: 500, opacity: 0 }}
                     out:fade={{ duration: 300 }}
                 >
                     {#each visibleItems as id}
                         <div
-                            class="w-full max-w-[1000px] md:max-w-full bg-[#000000] py-2.5 px-2 rounded-[25px] overflow-hidden"
+                            class="w-full max-w-[1000px] md:max-w-full py-2.5 px-2 rounded-[25px] bg-[#000000] overflow-hidden"
                         >
                             <img
                                 src="/assets/testimonials/Group {id}.png"
                                 alt="Testimonial {id}"
-                                class="w-full h-auto block select-none pointer-events-none"
+                                class="block w-full h-auto select-none pointer-events-none"
                                 draggable="false"
                             />
                         </div>
@@ -103,25 +106,25 @@
         </div>
 
         <!-- Pagination Controls -->
-        <div class="mt-6 flex flex-col items-center gap-6 z-10">
+        <div class="z-10 flex flex-col items-center mt-6 gap-6">
             <!-- Dots -->
             <div class="flex gap-2.5">
                 {#each Array(totalPages) as _, i}
                     <button
-                        on:click={() => setPage(i)}
-                        class="w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 {currentIndex ===
+                        onclick={() => setPage(i)}
+                        class="h-2.5 rounded-full cursor-pointer transition-all duration-300 {currentIndex ===
                         i
-                            ? 'bg-[#ffffff]/80 w-6'
-                            : 'bg-[#ffffff]/20 hover:bg-white/40'}"
+                            ? 'w-6 bg-[#ffffff]/80'
+                            : 'w-2.5 bg-[#ffffff]/20 hover:bg-white/40'}"
                         aria-label="Go to page {i + 1}"
                     ></button>
                 {/each}
             </div>
 
             <!-- Arrows -->
-            <div class="flex pb-5 gap-4">
+            <div class="flex gap-4 pb-5">
                 <button
-                    on:click={prev}
+                    onclick={prev}
                     class="cursor-pointer transition-all duration-200"
                     aria-label="Previous testimonials"
                 >
@@ -133,7 +136,7 @@
                     />
                 </button>
                 <button
-                    on:click={next}
+                    onclick={next}
                     class="cursor-pointer transition-all duration-200"
                     aria-label="Next testimonials"
                 >
