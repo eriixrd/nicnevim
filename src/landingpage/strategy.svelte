@@ -7,10 +7,8 @@
     class="relative flex flex-col items-center justify-center w-full py-20 bg-[#111116] overflow-hidden"
 >
     <Tag className="mx-auto mt-2.5">
-        <span
-            class="flex items-center text-[14px] md:text-[14.7px] text-white font-medium gap-2 leading-none"
-        >
-            <AppleEmoji symbol="📊" size={17} />
+        <AppleEmoji symbol="📊" size={18} className="!w-auto" />
+        <span class="text-[14px] text-white font-medium leading-none">
             Strategie mého portfolia
         </span>
     </Tag>

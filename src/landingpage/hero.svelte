@@ -30,12 +30,12 @@
 
         <Tag className="mx-auto mt-2.5">
             <img
-                src="/assets/persons/Ppls.svg"
+                src="/assets/persons/Ppls.png"
                 alt="Group"
-                class="w-[40px] h-[17px] md:w-[42px] md:h-[17.85px]"
+                class="w-[40px] h-[18px] md:w-[42px] md:h-[18px]"
             />
             <span
-                class="text-[14px] md:text-[14.7px] text-white font-medium leading-none"
+                class="text-[13.5px] md:text-[13.5px] text-white font-medium leading-none"
                 >450+ Aktivních investorů</span
             >
         </Tag>
@@ -108,9 +108,12 @@
             </div>
 
             <button
-                class="px-13 py-3.5 bg-[#FFC300] hover:bg-[#DEAA00] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-lg cursor-pointer transition-all duration-200"
+                class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-lg cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
             >
-                Chci vědět víc!
+                <span class="relative z-10">Chci vědět víc!</span>
+                <div
+                    class="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] transition-all duration-700 ease-in-out group-hover:left-full"
+                ></div>
             </button>
         </div>
     </div>

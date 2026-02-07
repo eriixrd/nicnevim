@@ -1,59 +1,96 @@
 <script lang="ts">
-    import { fade, fly } from "svelte/transition";
     import { onMount } from "svelte";
 
+    let scrollContainer: HTMLDivElement;
     let currentIndex = $state(0);
-    const items = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43];
-    let itemsPerPage = $state(6);
-    let totalPages = $derived(Math.ceil(items.length / itemsPerPage));
 
-    onMount(() => {
-        const updateItemsPerPage = () => {
-            itemsPerPage = window.innerWidth < 768 ? 3 : 6;
-            // currentIndex reset if out of bounds
-            if (currentIndex >= Math.ceil(items.length / itemsPerPage)) {
-                currentIndex = 0;
-            }
-        };
-        updateItemsPerPage();
-        window.addEventListener("resize", updateItemsPerPage);
-        return () => window.removeEventListener("resize", updateItemsPerPage);
+    // Data
+    const allItems = [
+        32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+        50, 51, 52, 53, 54, 55, 56, 57,
+    ];
+
+    // Responsive item grouping:
+    // - Mobile: 3 items per group, exclude last 2 images (56, 57)
+    // - Desktop: 2 items per group, show all images
+    let isDesktop = $state(false);
+
+    const itemGroups = $derived.by(() => {
+        const groups: number[][] = [];
+        // On mobile, exclude last 2 items (56, 57)
+        const items = isDesktop ? allItems : allItems.slice(0, -2);
+        const groupSize = isDesktop ? 2 : 3;
+
+        for (let i = 0; i < items.length; i += groupSize) {
+            const group = items.slice(i, i + groupSize);
+            groups.push(group);
+        }
+
+        return groups;
     });
 
-    let direction = $state(1);
+    // Config
+    const colWidth = 340;
+    const gap = 24;
+    const totalColumns = $derived(itemGroups.length);
 
-    let visibleItems = $derived(
-        items.slice(
-            currentIndex * itemsPerPage,
-            currentIndex * itemsPerPage + itemsPerPage,
-        ),
-    );
+    // Responsive totalPages: all items on mobile, peek effect on desktop
+    const totalPages = $derived(isDesktop ? totalColumns - 2 : totalColumns);
+
+    onMount(() => {
+        // Check if screen is desktop size (xl breakpoint = 1280px)
+        const checkScreenSize = () => {
+            isDesktop = window.innerWidth >= 1280;
+        };
+
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+
+        return () => {
+            window.removeEventListener("resize", checkScreenSize);
+        };
+    });
+
+    function scrollTo(index: number) {
+        if (!scrollContainer) return;
+
+        // Loop index
+        if (index < 0) index = totalPages - 1;
+        if (index >= totalPages) index = 0;
+
+        currentIndex = index;
+
+        const targetLeft = index * (colWidth + gap);
+
+        scrollContainer.scrollTo({
+            left: targetLeft,
+            behavior: "smooth",
+        });
+    }
 
     function next() {
-        direction = 1;
-        currentIndex = (currentIndex + 1) % totalPages;
+        scrollTo(currentIndex + 1);
     }
 
     function prev() {
-        direction = -1;
-        currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+        scrollTo(currentIndex - 1);
     }
 
     function setPage(index: number) {
-        direction = index > currentIndex ? 1 : -1;
-        currentIndex = index;
+        scrollTo(index);
     }
 </script>
 
 <section class="z-10 w-full bg-[#111116] overflow-hidden">
     <div
-        class="relative flex flex-col items-center justify-center w-full px-4 pt-[70px] pb-10"
+        class="relative flex flex-col items-center justify-center w-full pt-[70px] pb-10"
     >
-        <!-- Glow effect -->
+        <!-- Background Glow -->
         <div
             class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/25 blur-[150px] pointer-events-none z-0"
         ></div>
 
+        <!-- Header Content -->
         <div class="z-10 flex justify-center gap-[5px]">
             {#each Array(5) as _}
                 <img
@@ -80,36 +117,50 @@
             <span class="text-[#FFBA00]">a teď je řada na vás</span>.
         </p>
 
-        <div
-            class="z-10 grid grid-cols-1 grid-rows-1 w-full max-w-[98%] mx-auto mt-8 overflow-visible"
-        >
-            {#key currentIndex}
+        <!-- FlyonUI Carousel Structure -->
+        <div class="relative w-full mt-10 z-10 group px-0">
+            <!-- Carousel container with native scroll and snap -->
+            <div
+                bind:this={scrollContainer}
+                class="carousel flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-4"
+            >
+                <!-- 
+                    Padding Calc: 
+                    Mobile: pl/pr-[calc(50%-170px)] centers first and last items with equal padding on both sides
+                    XL: pl/pr-[max(0px,calc(50%-534px))] shows peek effect (Item 0 visible left, Item N visible right)
+                -->
                 <div
-                    class="col-start-1 row-start-1 grid grid-cols-1 md:grid-cols-3 justify-items-center w-full max-w-[1200px] mx-auto gap-6"
-                    in:fly={{ x: 40 * direction, duration: 500, opacity: 0 }}
-                    out:fade={{ duration: 300 }}
+                    class="carousel-body flex gap-6 w-max pl-[calc(50%-170px)] pr-[calc(50%-170px)] xl:pl-[max(0px,calc(50%-534px))] xl:pr-[max(0px,calc(50%-534px))] opacity-100"
                 >
-                    {#each visibleItems as id}
+                    {#each itemGroups as group, i}
+                        <!-- Slide -->
                         <div
-                            class="w-full max-w-[1000px] md:max-w-full py-2.5 px-2 rounded-[25px] overflow-hidden"
-                            style="background: linear-gradient(180deg, #0A0A0A 10%, #000000 100%);"
+                            class="carousel-slide snap-center shrink-0 w-[340px] flex flex-col gap-6"
                         >
-                            <img
-                                src="/assets/testimonials/Group {id}.png"
-                                alt="Testimonial {id}"
-                                class="block w-full h-auto select-none pointer-events-none mix-blend-lighten"
-                                draggable="false"
-                            />
+                            {#each group as itemNumber}
+                                <!-- Image -->
+                                <div
+                                    class="w-full h-[200px] px-5 py-2 rounded-[25px] overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                >
+                                    <img
+                                        src="/assets/testimonials/Group {itemNumber}.png"
+                                        alt="Testimonial {itemNumber}"
+                                        class="block max-w-full h-auto max-h-full select-none pointer-events-none mix-blend-lighten"
+                                        style="image-rendering: -webkit-optimize-contrast; image-rendering: auto;"
+                                        draggable="false"
+                                    />
+                                </div>
+                            {/each}
                         </div>
                     {/each}
                 </div>
-            {/key}
+            </div>
         </div>
 
-        <!-- Pagination Controls -->
-        <div class="z-10 flex flex-col items-center mt-6 gap-6">
-            <!-- Dots -->
-            <div class="flex gap-2.5">
+        <!-- Controls (Bottom) -->
+        <div class="z-10 flex flex-col items-center mt-6 gap-6 mb-10">
+            <!-- Pagination Dots -->
+            <div class="flex justify-center gap-2.5">
                 {#each Array(totalPages) as _, i}
                     <button
                         onclick={() => setPage(i)}
@@ -126,7 +177,7 @@
             <div class="flex gap-4 pb-5">
                 <button
                     onclick={prev}
-                    class="cursor-pointer transition-all duration-200"
+                    class="cursor-pointer transition-all duration-200 hover:scale-105"
                     aria-label="Previous testimonials"
                 >
                     <img
@@ -138,7 +189,7 @@
                 </button>
                 <button
                     onclick={next}
-                    class="cursor-pointer transition-all duration-200"
+                    class="cursor-pointer transition-all duration-200 hover:scale-105"
                     aria-label="Next testimonials"
                 >
                     <img
@@ -150,5 +201,17 @@
                 </button>
             </div>
         </div>
+
+        <div class="h-10"></div>
     </div>
 </section>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

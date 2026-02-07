@@ -64,9 +64,9 @@
     <div class="relative flex flex-col items-center w-full">
         <!-- Main Tag -->
         <Tag className="mx-auto">
-            <AppleEmoji symbol="🔒" size={17} />
+            <AppleEmoji symbol="🔒" size={18} className="!w-auto" />
             <span
-                class="text-[14px] md:text-[14.7px] text-white font-medium leading-none"
+                class="text-[14px] md:text-[14px] text-white font-medium leading-none"
                 >Uzavřená komunita</span
             >
         </Tag>
@@ -96,9 +96,7 @@
             class="z-10 flex flex-col md:flex-row items-center justify-center gap-8 mx-auto mt-5 w-full max-w-[400px] md:max-w-[900px]"
         >
             {#each packages as pkg}
-                <div
-                    class="group relative w-full p-px rounded-[20px] bg-[#1C1D19]"
-                >
+                <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
                     <!-- Shadow Layer -->
                     <div
                         class="absolute inset-0 rounded-[20px] z-[-1] {pkg.shadowClass}"
@@ -129,9 +127,12 @@
                         </p>
 
                         <button
-                            class="mt-5 w-[85%] py-2 bg-[#FFC300] hover:bg-[#DEAA00] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200"
+                            class="group relative mt-5 w-[85%] py-2 bg-[#FFC300] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
                         >
-                            {pkg.buttonText}
+                            <span class="relative z-10">{pkg.buttonText}</span>
+                            <div
+                                class="absolute top-0 -left-[125%] w-[50%] h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] transition-all duration-700 ease-in-out group-hover:left-[125%]"
+                            ></div>
                         </button>
 
                         {#if pkg.tagText}
@@ -139,11 +140,12 @@
                                 {#if pkg.tagSymbol}
                                     <AppleEmoji
                                         symbol={pkg.tagSymbol}
-                                        size={17}
+                                        size={18}
+                                        className="!w-auto"
                                     />
                                 {/if}
                                 <span
-                                    class="text-[13px] md:text-[14px] text-white font-medium leading-none"
+                                    class="text-[14px] md:text-[14px] text-white font-medium leading-none"
                                     >{pkg.tagText}</span
                                 >
                             </Tag>
