@@ -88,6 +88,7 @@
         <!-- Background Glow -->
         <div
             class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/25 blur-[150px] pointer-events-none z-0"
+            style="filter: blur(150px); -webkit-filter: blur(150px); will-change: transform; transform: translate3d(0, 0, 0);"
         ></div>
 
         <!-- Header Content -->

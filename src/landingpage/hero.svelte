@@ -6,6 +6,7 @@
 <section>
     <div
         class="absolute top-0 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 bg-[#FFBA00]/50 blur-[70px] pointer-events-none"
+        style="filter: blur(70px); -webkit-filter: blur(70px); will-change: transform; transform: translate3d(0, 0, 0);"
     ></div>
     <div
         class="relative flex flex-col items-center justify-center w-full max-w-full sm:px-0"
@@ -62,9 +63,11 @@
         >
             <div
                 class="-z-10 absolute inset-0 bg-[#6633EE]/30 blur-[50px] md:blur-[80px] md:scale-100"
+                style="filter: blur(50px); -webkit-filter: blur(50px); will-change: transform; transform: translate3d(0, 0, 0);"
             ></div>
             <div
                 class="relative rounded-[20px] overflow-hidden shadow-2xl aspect-video p-px"
+                style="box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); -webkit-box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); will-change: transform; transform: translate3d(0, 0, 0);"
             >
                 <iframe
                     class="relative w-full h-full"
