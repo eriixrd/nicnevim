@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import Stars from "../components/Stars.svelte";
 
     let scrollContainer: HTMLDivElement;
     let currentIndex = $state(0);
@@ -88,19 +89,11 @@
         <!-- Background Glow -->
         <div
             class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/25 blur-[150px] pointer-events-none z-0"
-            style="filter: blur(150px); -webkit-filter: blur(150px); will-change: transform; transform: translate3d(0, 0, 0);"
+            style="filter: blur(150px); -webkit-filter: blur(150px); will-change: filter, transform; transform: translate3d(0, 0, 0);"
         ></div>
 
         <!-- Header Content -->
-        <div class="z-10 flex justify-center gap-[5px]">
-            {#each Array(5) as _}
-                <img
-                    src="/assets/icons/Star.svg"
-                    alt="Star"
-                    class="w-[16.47px] h-[15.92px] md:w-[17.29px] md:h-[16.72px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
-                />
-            {/each}
-        </div>
+        <Stars />
 
         <h1
             class="z-10 mt-2.5 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"

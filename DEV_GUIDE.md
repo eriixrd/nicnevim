@@ -52,4 +52,21 @@ Abychom zabránili neoprávněnému stahování ikon, log a emoji, jsou na všec
 > **Poznámka:** Pokud potřebuješ, aby byl obrázek klikatelný jako odkaz, obal ho do tagu `<a>`. Kliknutí projde skrz obrázek na odkaz, ale obrázek samotný zůstane chráněn proti stažení.
 
 ---
-*Vytvořeno během refaktoringu 6. 2. 2026*
+
+## 🛠️ Zjednodušování a Čistota Kódu
+*   **Svelte 5 Snippets:** Pro malé kousky opakujícího se HTML v rámci jedné komponenty používejte `{#snippet name()}...{/snippet}`. Snižuje to vizuální šum a usnadňuje údržbu.
+*   **Logika v šablonách:** Složitější transformace dat nepište přímo do HTML. Použijte `$derived` runu pro přípravu dat a v šabloně je jen vytiskněte.
+*   **Tailwind Šablony:** Pokud má prvek více než 10 tříd, zkontrolujte, zda nelze některé "hardcodované" hodnoty (např. barvy) přesunout do `tailwind.config.js` jako proměnné.
+*   **TypeScript Utility:** Využívejte vestavěné typy jako `ComponentProps` ze Svelte pro správné typování props u wrapper komponent.
+
+---
+
+## 📱 Safari & iOS Kompatibilita
+Safari (zejména na iOS) má svá specifika. Každá nová funkce musí splňovat:
+*   **Backdrop Blur:** Chrome a Safari interpretují blur odlišně. Vždy kontrolujte, zda pod skleněným efektem není vidět "useknutá" hrana. U barevných přechodů s blurem přidávejte `-webkit-mask-image: linear-gradient(...)` pokud je to nutné pro vyhlazení.
+*   **Mobilní Viewport:** Vždy používejte dynamické jednotky výšky: `h-[100dvh]` místo `h-screen` a `min-h-[100dvh]` pro sekce, které mají vyplnit celou obrazovku.
+*   **Zákaz Zoomování:** U inputů zajistěte, aby `font-size` bylo minimálně `16px`, jinak iOS Safari automaticky přibližuje stránku při kliknutí do pole.
+*   **Stínování a Glow:** Příliš mnoho `blur` efektů může na starších iPhonech zpomalit prohlížeč. Pokud element bliká, přidejte mu `will-change: filter` nebo `transform: translateZ(0)`.
+
+---
+*Vytvořeno během refaktoringu 6. 2. 2026 (Aktualizováno 7. 2. 2026)*

@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
 @layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+    }
+
     img {
         pointer-events: none;
         user-select: none;
         -webkit-user-select: none;
         -webkit-user-drag: none;
+        /* Crisp images on high-dpi screens */
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Remove tap highlight on iOS */
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
     }
 }

@@ -1,7 +1,11 @@
 <script lang="ts">
-    export let symbol: string;
-    export let size: number = 20;
-    export let className: string = "";
+    interface Props {
+        symbol: string;
+        size?: number;
+        className?: string;
+    }
+
+    let { symbol, size = 20, className = "" }: Props = $props();
 </script>
 
 <img

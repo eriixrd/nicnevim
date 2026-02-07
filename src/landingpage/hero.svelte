@@ -1,12 +1,13 @@
 <script lang="ts">
     import AppleEmoji from "../components/AppleEmoji.svelte";
     import Tag from "../components/Tag.svelte";
+    import Stars from "../components/Stars.svelte";
 </script>
 
 <section>
     <div
         class="absolute top-0 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 bg-[#FFBA00]/50 blur-[70px] pointer-events-none"
-        style="filter: blur(70px); -webkit-filter: blur(70px); will-change: transform; transform: translate3d(0, 0, 0);"
+        style="filter: blur(70px); -webkit-filter: blur(70px); will-change: filter; transform: translate3d(0, 0, 0);"
     ></div>
     <div
         class="relative flex flex-col items-center justify-center w-full max-w-full sm:px-0"
@@ -16,18 +17,10 @@
             alt="Logo"
             class="z-10 h-[72px] w-[65px] mt-8 mb-2 select-none pointer-events-none"
             draggable="false"
-            style="max-width:160px;"
+            style="max-width:160px; image-rendering: -webkit-optimize-contrast;"
         />
 
-        <div class="z-10 flex justify-center mt-4 gap-[5px]">
-            {#each Array(5) as _}
-                <img
-                    src="/assets/icons/Star.svg"
-                    alt="Star"
-                    class="w-[16.47px] h-[15.92px] md:w-[17.29px] md:h-[16.72px] drop-shadow-[0_0_10px_rgba(255,186,0,0.6)]"
-                />
-            {/each}
-        </div>
+        <Stars className="mt-4" />
 
         <Tag className="mx-auto mt-2.5">
             <img

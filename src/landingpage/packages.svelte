@@ -75,7 +75,7 @@
         <div class="relative flex flex-col items-center w-full mt-2.5">
             <div
                 class="absolute top-1/2 left-1/2 w-[340px] h-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FFBA00]/15 blur-[50px] pointer-events-none"
-                style="filter: blur(50px); -webkit-filter: blur(50px); will-change: transform; transform: translate3d(0, 0, 0);"
+                style="filter: blur(50px); -webkit-filter: blur(50px); will-change: filter, transform; transform: translate3d(0, 0, 0);"
             ></div>
             <h1
                 class="z-10 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
@@ -101,6 +101,7 @@
                     <!-- Shadow Layer -->
                     <div
                         class="absolute inset-0 rounded-[20px] z-[-1] {pkg.shadowClass}"
+                        style="will-change: filter, transform; transform: translate3d(0, 0, 0);"
                     ></div>
 
                     <!-- Corner Highlight / Border Stroke -->
@@ -115,6 +116,7 @@
                             src={pkg.icon}
                             alt={pkg.label}
                             class="w-[35px] h-auto"
+                            style="image-rendering: -webkit-optimize-contrast;"
                         />
                         <h2
                             class="mt-1 text-[39px] md:text-[41px] text-white font-extrabold"
