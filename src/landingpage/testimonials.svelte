@@ -171,25 +171,25 @@
             <div class="flex gap-4 pb-5">
                 <button
                     onclick={prev}
-                    class="cursor-pointer transition-all duration-200 hover:scale-105"
+                    class="cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none"
                     aria-label="Previous testimonials"
                 >
                     <img
                         src="/assets/icons/Arrow.png"
                         alt="Previous"
-                        class="w-[50px] h-[50px] opacity-80"
-                        style="filter: invert(1) brightness(1.8); transform: scaleX(-1)"
+                        class="w-[50px] h-[50px] opacity-80 pointer-events-none"
+                        style="filter: invert(1) brightness(1.8); transform: scaleX(-1);"
                     />
                 </button>
                 <button
                     onclick={next}
-                    class="cursor-pointer transition-all duration-200 hover:scale-105"
+                    class="cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none"
                     aria-label="Next testimonials"
                 >
                     <img
                         src="/assets/icons/Arrow.png"
                         alt="Next"
-                        class="w-[50px] h-[50px] opacity-80"
+                        class="w-[50px] h-[50px] opacity-80 pointer-events-none"
                         style="filter: invert(1) brightness(1.8);"
                     />
                 </button>

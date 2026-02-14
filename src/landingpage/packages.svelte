@@ -32,7 +32,7 @@
                 "Sledujte všechny mé obchody<br />v reálném čase",
                 "Přístup k celému mému portfoliu",
                 "Můj aktuální pohled na trhy<br />(týdenní video-update)",
-                "Watchlist 100+ firem & Ceny<br />na kterých plánuji obchodovat",
+                "Watchlist 50+ firem & Ceny<br />na kterých plánuji obchodovat",
                 "Data z Bloomberg terminálu<br />(valuace, výhledy & Fundament)",
                 "Návody, jak vše aplikovat v praxi",
                 "Osobní přístup ode mě a mého týmu",
@@ -66,7 +66,7 @@
         <Tag className="mx-auto">
             <AppleEmoji symbol="🔒" size={18} className="!w-auto" />
             <span
-                class="text-[14px] md:text-[14px] text-white font-medium leading-none"
+                class="text-[16px] md:text-[16px] text-white font-medium leading-none"
                 >Uzavřená komunita</span
             >
         </Tag>
@@ -148,7 +148,7 @@
                                     />
                                 {/if}
                                 <span
-                                    class="text-[14px] md:text-[14px] text-white font-medium leading-none"
+                                    class="text-[16px] md:text-[16px] text-white font-medium leading-none"
                                     >{pkg.tagText}</span
                                 >
                             </Tag>

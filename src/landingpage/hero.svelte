@@ -1,5 +1,4 @@
 <script lang="ts">
-    import AppleEmoji from "../components/AppleEmoji.svelte";
     import Tag from "../components/Tag.svelte";
     import Stars from "../components/Stars.svelte";
 </script>
@@ -28,8 +27,7 @@
                 alt="Group"
                 class="w-[40px] h-[18px] md:w-[42px] md:h-[18px]"
             />
-            <span
-                class="text-[13.5px] md:text-[13.5px] text-white font-medium leading-none"
+            <span class="text-[16px] text-white font-medium leading-none"
                 >450+ Aktivních investorů</span
             >
         </Tag>
@@ -104,7 +102,7 @@
             </div>
 
             <button
-                class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-lg cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
+                class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
             >
                 <span class="relative z-10">Chci vědět víc!</span>
                 <div
