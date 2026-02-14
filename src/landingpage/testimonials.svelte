@@ -31,7 +31,7 @@
     });
 
     // Config
-    const colWidth = 340;
+    const colWidth = $derived(isDesktop ? 425 : 340);
     const gap = 24;
     const totalColumns = $derived(itemGroups.length);
 
@@ -61,7 +61,8 @@
 
         currentIndex = index;
 
-        const targetLeft = index * (colWidth + gap);
+        const currentWidth = isDesktop ? 425 : 340;
+        const targetLeft = index * (currentWidth + gap);
 
         scrollContainer.scrollTo({
             left: targetLeft,
@@ -124,17 +125,17 @@
                     XL: pl/pr-[max(0px,calc(50%-534px))] shows peek effect (Item 0 visible left, Item N visible right)
                 -->
                 <div
-                    class="carousel-body flex gap-6 w-max pl-[calc(50%-170px)] pr-[calc(50%-170px)] xl:pl-[max(0px,calc(50%-534px))] xl:pr-[max(0px,calc(50%-534px))] opacity-100"
+                    class="carousel-body flex gap-6 w-max pl-[calc(50%-170px)] pr-[calc(50%-170px)] xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
                 >
                     {#each itemGroups as group, i}
                         <!-- Slide -->
                         <div
-                            class="carousel-slide snap-center shrink-0 w-[340px] flex flex-col gap-6"
+                            class="carousel-slide snap-center shrink-0 w-[340px] md:w-[425px] flex flex-col gap-6"
                         >
                             {#each group as itemNumber}
                                 <!-- Image -->
                                 <div
-                                    class="w-full h-[200px] px-5 py-2 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                    class="w-full h-[200px] md:h-[250px] px-5 py-2 md:px-6.5 md:py-2.5 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
                                 >
                                     <img
                                         src="/assets/testimonials/Group {itemNumber}.png"
