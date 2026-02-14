@@ -74,7 +74,7 @@
     </div>
 
     <div
-        class="z-10 mt-8 flex flex-col items-center gap-8 w-full px-4 max-w-[420px]"
+        class="z-10 mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4 max-w-[420px] md:max-w-[1300px] mx-auto"
     >
         {#each titles as pkg, i}
             <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
@@ -115,7 +115,7 @@
 
                     <!-- Heading -->
                     <h3
-                        class="mt-4 text-white text-[22px] font-bold leading-[1.5] text-left"
+                        class="mt-4 text-white text-[22px] md:text-[24px] font-bold leading-[1.5] text-left"
                     >
                         {@html pkg.title}
                     </h3>

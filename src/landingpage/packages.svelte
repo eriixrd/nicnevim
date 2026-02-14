@@ -124,7 +124,7 @@
                             {pkg.price}
                         </h2>
                         <p
-                            class="mt-[-8px] text-[16px] md:text-[17px] text-[#6F6F6F] font-medium"
+                            class="mt-[-8px] text-[16px] md:text-[18px] text-[#6F6F6F] font-medium"
                         >
                             {pkg.label}
                         </p>
@@ -157,7 +157,7 @@
                         <div class="flex flex-col w-[85%] mt-8 gap-[15px]">
                             {#if pkg.type === "annual"}
                                 <p
-                                    class="mb-2 text-[16px] text-white font-medium leading-[1.25]"
+                                    class="mb-2 text-[16px] md:text-[18px] text-white font-medium leading-[1.25]"
                                 >
                                     {@html annualHeading}
                                 </p>
@@ -171,7 +171,7 @@
                                         class="shrink-0 w-[15px] h-[15px] mt-[2.6px]"
                                     />
                                     <span
-                                        class="text-[16px] text-white font-medium leading-[1.25]"
+                                        class="text-[16px] md:text-[18px] text-white font-medium leading-[1.25]"
                                     >
                                         {@html feature}
                                     </span>

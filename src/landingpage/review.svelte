@@ -177,7 +177,7 @@
                         {#each group as itemNumber}
                             <!-- Image -->
                             <div
-                                class="w-full h-[200px] px-5 py-2 rounded-[25px] overflow-hidden bg-linear-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                class="w-full h-[200px] px-5 py-2 overflow-hidden bg-linear-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
                             >
                                 <img
                                     src="/assets/testimonials/Group {itemNumber}.png"
@@ -274,13 +274,11 @@
         >
             {#each packages as pkg}
                 <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
-                    <!-- Shadow Layer -->
                     <div
                         class="absolute inset-0 rounded-[20px] z-[-1] {pkg.shadowClass}"
                         style="will-change: filter, transform; transform: translate3d(0, 0, 0);"
                     ></div>
 
-                    <!-- Corner Highlight / Border Stroke -->
                     <div
                         class="absolute inset-0 rounded-[20px] bg-linear-to-tl {pkg.gradientBorder} pointer-events-none"
                     ></div>

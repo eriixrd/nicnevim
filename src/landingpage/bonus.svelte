@@ -22,7 +22,7 @@
     </h1>
 
     <div
-        class="z-10 mt-12 relative flex flex-col items-center gap-8 w-full px-4 max-w-[420px]"
+        class="z-10 mt-12 relative flex flex-col md:flex-row items-center justify-center gap-8 w-full px-4 max-w-[420px] md:max-w-[840px]"
     >
         <!-- Bonus #1 -->
         <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
@@ -61,7 +61,7 @@
 
                 <!-- Heading -->
                 <h3
-                    class="mt-4 text-white text-[22px] font-bold leading-[1.3] text-left"
+                    class="mt-4 text-white text-[22px] md:text-[24px] font-bold leading-[1.3] text-left"
                 >
                     Přístup ke <span class="text-[#FFBA00]"
                         >450+ zkušeným<br />investorům</span
@@ -137,7 +137,7 @@
 
                 <!-- Heading -->
                 <h3
-                    class="mt-4 text-white text-[22px] font-bold leading-[1.3] text-left"
+                    class="mt-4 text-white text-[22px] md:text-[24px] font-bold leading-[1.3] text-left"
                 >
                     <span class="text-[#FFBA00]"
                         >Bloomberg výhledy,<br />valuace & fundament</span
