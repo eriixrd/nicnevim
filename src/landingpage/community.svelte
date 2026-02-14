@@ -74,7 +74,7 @@
     </div>
 
     <div
-        class="z-10 mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4 max-w-[420px] md:max-w-[1300px] mx-auto"
+        class="z-10 mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4 max-w-[420px] md:max-w-[1600px] mx-auto"
     >
         {#each titles as pkg, i}
             <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
@@ -93,8 +93,7 @@
                     class="relative flex flex-col items-start w-full h-full px-5 pt-5 pb-8 rounded-[19px] bg-linear-to-br from-[#1C1D19] to-[#0B0B0A]"
                 >
                     <div
-                        class="relative w-full rounded-[15px] overflow-hidden bg-yellow-500/10"
-                        style="aspect-ratio: 1.44 / 1;"
+                        class="relative w-full rounded-[15px] overflow-hidden bg-yellow-500/10 aspect-[1.44/1] md:aspect-[1.15/1]"
                     ></div>
 
                     <!-- Number Tag -->
