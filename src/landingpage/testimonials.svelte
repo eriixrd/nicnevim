@@ -81,6 +81,54 @@
     function setPage(index: number) {
         scrollTo(index);
     }
+    let isDragging = $state(false);
+    let startX = 0;
+    let scrollStart = 0;
+    let wasDragging = $state(false);
+
+    function handleMouseDown(e: MouseEvent) {
+        if (!scrollContainer) return;
+        isDragging = true;
+        wasDragging = false;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollStart = scrollContainer.scrollLeft;
+
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", handleMouseUp);
+    }
+
+    function handleMouseMove(e: MouseEvent) {
+        if (!isDragging || !scrollContainer) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 1.5; // Scroll speed
+
+        if (Math.abs(walk) > 5) {
+            wasDragging = true;
+        }
+
+        scrollContainer.scrollLeft = scrollStart - walk;
+    }
+
+    function handleMouseUp() {
+        if (!isDragging) return;
+        isDragging = false;
+
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseup", handleMouseUp);
+
+        // Snap to nearest page after drag
+        if (scrollContainer) {
+            const currentScroll = scrollContainer.scrollLeft;
+            const itemWidth = (isDesktop ? 425 : 340) + gap;
+            const newIndex = Math.round(currentScroll / itemWidth);
+            scrollTo(newIndex);
+        }
+
+        setTimeout(() => {
+            wasDragging = false;
+        }, 100);
+    }
 </script>
 
 <section class="z-10 w-full bg-[#111116] overflow-hidden">
@@ -117,7 +165,13 @@
             <!-- Carousel container with native scroll and snap -->
             <div
                 bind:this={scrollContainer}
-                class="carousel flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-4"
+                class="carousel flex overflow-x-auto snap-x snap-mandatory no-scrollbar py-4"
+                onmousedown={handleMouseDown}
+                role="region"
+                aria-label="Testimonials carousel"
+                style="cursor: {isDragging
+                    ? 'grabbing'
+                    : 'grab'}; user-select: none;"
             >
                 <!-- 
                     Padding Calc: 

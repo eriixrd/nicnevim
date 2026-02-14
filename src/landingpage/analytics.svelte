@@ -16,6 +16,11 @@
     const mikeIndex = team.findIndex((m) => m.name === "Mike");
     let currentIndex = $state(mikeIndex);
     let isDesktop = $state(false);
+    let startX = 0;
+    let isDragging = $state(false);
+    let wasDragging = $state(false);
+    let dragDistance = $state(0);
+    const dragThreshold = 50;
 
     onMount(() => {
         const checkScreen = () => (isDesktop = window.innerWidth >= 768);
@@ -34,6 +39,56 @@
 
     function setPage(i: number) {
         currentIndex = i;
+    }
+
+    function handleDragStart(e: MouseEvent | TouchEvent) {
+        isDragging = true;
+        wasDragging = false;
+        startX = "touches" in e ? e.touches[0].clientX : e.clientX;
+        dragDistance = 0;
+
+        // Add window listeners to handle dragging outside the element
+        if (!("touches" in e)) {
+            window.addEventListener("mousemove", handleDragMove);
+            window.addEventListener("mouseup", handleDragEnd);
+        }
+    }
+
+    function handleDragMove(e: MouseEvent | TouchEvent) {
+        if (!isDragging) return;
+        const currentX = "touches" in e ? e.touches[0].clientX : e.clientX;
+        const diff = currentX - startX;
+
+        if (Math.abs(diff) > 5) {
+            wasDragging = true;
+            dragDistance = diff;
+        }
+
+        if (Math.abs(dragDistance) > 10) {
+            if (e.cancelable) e.preventDefault();
+        }
+    }
+
+    function handleDragEnd() {
+        if (!isDragging) return;
+
+        window.removeEventListener("mousemove", handleDragMove);
+        window.removeEventListener("mouseup", handleDragEnd);
+
+        if (Math.abs(dragDistance) > dragThreshold) {
+            if (dragDistance > 0) {
+                prev();
+            } else {
+                next();
+            }
+        }
+
+        isDragging = false;
+        dragDistance = 0;
+
+        setTimeout(() => {
+            wasDragging = false;
+        }, 100);
     }
 </script>
 
@@ -61,6 +116,18 @@
         <!-- Slider Container -->
         <div
             class="relative w-full flex items-center justify-center overflow-visible h-[450px] md:h-[550px]"
+            role="region"
+            aria-label="Team members slider"
+            onmousedown={handleDragStart}
+            onmousemove={handleDragMove}
+            onmouseup={handleDragEnd}
+            onmouseleave={handleDragEnd}
+            ontouchstart={handleDragStart}
+            ontouchmove={handleDragMove}
+            ontouchend={handleDragEnd}
+            style="touch-action: pan-y; cursor: {isDragging
+                ? 'grabbing'
+                : 'grab'};"
         >
             <!-- Background Glow (Exactly behind center card) -->
             <div
@@ -78,13 +145,14 @@
                 <div
                     role="button"
                     tabindex="0"
-                    class="absolute cursor-pointer {isFar
+                    class="absolute cursor-pointer select-none {isFar ||
+                    isDragging
                         ? 'transition-none'
                         : 'transition-all duration-700 ease-out'}"
                     style="
                         transform: translateX({normalizedOffset *
-                        (isDesktop ? 400 : 220)}px) scale({normalizedOffset ===
-                    0
+                        (isDesktop ? 400 : 220) +
+                        dragDistance}px) scale({normalizedOffset === 0
                         ? 1
                         : 0.8});
                         opacity: {normalizedOffset === 0
@@ -93,12 +161,13 @@
                           ? 0.4
                           : 0};
                         z-index: {normalizedOffset === 0 ? 30 : 20};
-                        pointer-events: {normalizedOffset === 0
+                        pointer-events: {normalizedOffset === 0 && !wasDragging
                         ? 'auto'
                         : 'none'};
                     "
-                    onclick={() => setPage(i)}
-                    onkeydown={(e) => e.key === "Enter" && setPage(i)}
+                    onclick={() => !wasDragging && setPage(i)}
+                    onkeydown={(e) =>
+                        e.key === "Enter" && !wasDragging && setPage(i)}
                 >
                     <div
                         class="relative w-[270px] md:w-[337px] h-auto overflow-hidden"
