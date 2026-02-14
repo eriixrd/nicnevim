@@ -81,7 +81,9 @@
                     {pillar.title}
                 </h3>
 
-                <p class="text-[16.5px] text-white font-medium leading-[150%]">
+                <p
+                    class="text-[16.5px] text-white font-medium leading-[150%] whitespace-nowrap"
+                >
                     {@html pillar.desc}
                 </p>
             </div>
