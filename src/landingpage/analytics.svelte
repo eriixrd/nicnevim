@@ -103,7 +103,7 @@
     </Tag>
 
     <h2
-        class="z-10 mt-2 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Poznejte můj tým<br />
         <span class="text-[#FFBA00]">profesionálních<br />analytiků</span>,
@@ -228,7 +228,7 @@
         </div>
 
         <p
-            class="z-10 -mt-2 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 -mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Naším cílem je, vám každý den<br />
             přinášet profesionální pohled na<br />
@@ -278,10 +278,12 @@
         ></div>
 
         <h2
-            class="z-10 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             Právě tato<br />kombinace zajišťuje<br />kvalitu obsahu a<br />
-            <span class="text-[#FFBA00]">spokojenost<br />investorů</span> v komunitě
+            <span class="text-[#FFBA00] font-bold"
+                >spokojenost<br />investorů</span
+            > v komunitě
         </h2>
     </div>
 

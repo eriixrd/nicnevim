@@ -4,42 +4,42 @@
 
     const titles = [
         {
-            title: 'Přístup ke všem mým<br />obchodům <span class="text-[#FFBA00]">v reálném čase</span>',
+            title: 'Přístup ke všem mým<br />obchodům <span class="text-[#FFBA00] font-bold">v reálném čase</span>',
             features: [
                 "Získáte přístup do sekce, kde sdílím<br />všechny své nákupy ihned jak je udělám.<br />O každém vstupu i výstupu z pozice jste<br />vždy informování oznámením na mobilu.",
                 "Cílem je poskytnout vám transparentní<br />vhled do praxe, ze které se můžete<br />dlouhodobě učit.",
             ],
         },
         {
-            title: 'Přístup k celému <span class="text-[#FFBA00]">veřejnému</span><br /><span class="text-[#FFBA00]">portfoliu</span> <span class="text-[18px] font-medium text-white/90">(~2.000.000 USD)</span>',
+            title: 'Přístup k celému <span class="text-[#FFBA00] font-bold">veřejnému</span><br /><span class="text-[#FFBA00] font-bold">portfoliu</span> <span class="text-[18px] font-medium text-white/90">(~2.000.000 USD)</span>',
             features: [
                 "Uvidíte celé portfolio přehledně na<br />jednom místě - všechny vypsané PUT<br />a CALL opce, akcie, které držím,<br />i dlouhodobé pozice včetně kryptoměn.",
                 "Díky tomu získáte jasný kontext ke<br />každému obchodu a struktuře celého<br />portfolia.",
             ],
         },
         {
-            title: '<span class="text-[#FFBA00]">Mini-portfolio:</span> Jak naši<br />opční strategii využít s<br /><span class="text-[#FFBA00]">menším kapitálem</span>',
+            title: '<span class="text-[#FFBA00] font-bold">Mini-portfolio:</span> Jak naši<br />opční strategii využít s<br /><span class="text-[#FFBA00] font-bold">menším kapitálem</span>',
             features: [
                 "Jedná se o zcela nové portfolio, na<br />kterém vám přímo v praxi ukazujeme,<br />jak využívat opce i s menším kapitálem<br />(200.000 Kč).",
                 "Vybrané obchody rozebíráme do<br />hloubky, abyste pochopili logiku<br />rozhodování, práci s rizikem a celý<br />proces. Nejen samotný výsledek.",
             ],
         },
         {
-            title: '<span class="text-[#FFBA00]">Pravidelný update:</span> Náš<br />aktuální pohled na trhy<br />a portfolio',
+            title: '<span class="text-[#FFBA00] font-bold">Pravidelný update:</span> Náš<br />aktuální pohled na trhy<br />a portfolio',
             features: [
                 "Pravidelný video-update, ve kterém<br />rozebíráme aktuální stav portfolia,<br />jednotlivé pozice a změny na trzích.",
                 "Cílem je poskytnout vám jasný přehled a<br />kontext, abyste chápali logiku našich<br />rozhodnutí a další kroky do budoucna.",
             ],
         },
         {
-            title: '<span class="text-[#FFBA00]">Watchlist ~50 zajímavých</span><br /><span class="text-[#FFBA00]">firem</span> a ceny, na kterých<br />plánujeme obchodovat',
+            title: '<span class="text-[#FFBA00] font-bold">Watchlist ~50 zajímavých</span><br /><span class="text-[#FFBA00] font-bold">firem</span> a ceny, na kterých<br />plánujeme obchodovat',
             features: [
                 "Získáte přístup k aktualizovanému<br />seznamu firem, které dlouhodobě<br />sledujeme a plánujeme vypsat opce.<br />Zároveň u nich uvádíme výpočet<br />vnitřní hodnoty.",
                 "Watchlist nám pomáhá udržet si přehled<br />o potenciálních příležitostech na trhu.",
             ],
         },
         {
-            title: '<span class="text-[#FFBA00]">Praktické návody:</span> Jak<br />obchodovat opce <span class="text-[#FFBA00]">krok za</span><br /><span class="text-[#FFBA00]">krokem</span>',
+            title: '<span class="text-[#FFBA00] font-bold">Praktické návody:</span> Jak<br />obchodovat opce <span class="text-[#FFBA00] font-bold">krok za</span><br /><span class="text-[#FFBA00] font-bold">krokem</span>',
             features: [
                 "Získáte strukturované návody, které<br />popisují celý proces práce s opcemi – od<br />výběru titulu až po řízení pozice.",
                 "Cílem je, abyste chápali celý postup a<br />mohli ho sami přenést do praxe.",
@@ -64,7 +64,7 @@
             style="filter: blur(80px); -webkit-filter: blur(80px); will-change: filter, transform; transform: translate3d(0, 0, 0);"
         ></div>
         <h2
-            class="z-10 mt-6 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-[1.1]"
+            class="z-10 mt-2 max-w-[950px] text-center text-[34px] md:text-[40px] text-white font-extrabold leading-[1.1]"
         >
             Pokud se dnes<br />
             přidáte <span class="text-[#FFBA00]">do komunity</span>,<br />
@@ -155,7 +155,7 @@
     }
     @media (min-width: 768px) {
         .shadow-yellow-glow {
-            box-shadow: 0px 0px 120px 0px rgba(255, 186, 0, 0.15);
+            box-shadow: none;
         }
     }
 </style>

@@ -19,7 +19,7 @@
         <img
             src="/assets/addpics/logo.png"
             alt="Logo"
-            class="z-10 h-[75px] w-auto -mt-3 mb-2 select-none pointer-events-none"
+            class="z-10 h-[85px] w-auto -mt-3 mb-2 select-none pointer-events-none"
             draggable="false"
             style="max-width:160px; image-rendering: -webkit-optimize-contrast;"
         />
@@ -29,7 +29,7 @@
     </div>
 
     <h2
-        class="z-30 -mt-7 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-30 -mt-7 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Proto si neustále<br />
         připomínám, že<br />
@@ -37,7 +37,7 @@
     </h2>
 
     <p
-        class="z-10 mt-3 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-3 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         Přes 10 let profesionálního<br />
         pokeru mě naučilo pracovat s<br />
@@ -55,7 +55,7 @@
     ></div>
 
     <h2
-        class="z-10 mt-10 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-10 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Z těchto zkušeností<br />
         vycházejí <span class="text-[#FFBA00]">3 pilíře</span>,<br />
@@ -63,11 +63,11 @@
     </h2>
 
     <div
-        class="flex flex-col items-center md:flex-row md:items-stretch justify-center gap-6 mt-12 w-full max-w-[1850px] px-4"
+        class="flex flex-col items-center md:flex-row md:items-stretch justify-center gap-6 md:gap-8 mt-12 w-full max-w-[1850px] px-4"
     >
         {#each [{ icon: "/assets/icons/Check.svg", title: "Fundamentální analýza", desc: "Tvoří základ pro výběr titulů vhodných<br />k obchodování. Pomáhá nám pochopit,<br /><span class='text-[#C9A44A] font-bold'>jak firma skutečně vydělává</span>, jaká je<br />její vnitřní hodnota a v jaké fázi cyklu<br />se zrovna nachází." }, { icon: "/assets/icons/Tech.svg", title: "Technická analýza", desc: "Zde pracujeme s cenovými úrovněmi,<br />trendem a volatilitou, což nám<br />pomáhá <span class='text-[#C9A44A] font-bold'>správně načasovat vstupy</span><br />do jednotlivých pozic." }, { icon: "/assets/icons/Geo.svg", title: "Makro & Geopolitika", desc: "Pochopení celého kontextu dává<br />obchodům širší rámec. Pomáhá nám<br />pochopit, <span class='text-[#C9A44A] font-bold'>v jakém prostředí se<br />rozhodujeme</span> a jaké síly mohou ovlivnit<br />trhy a ceny aktiv." }] as pillar}
             <div
-                class="flex flex-col items-start p-8 w-full max-w-[380px] h-auto rounded-[20px] bg-linear-to-br from-[#111116] via-[#1C2330] to-[#111116]"
+                class="flex flex-col items-start p-6 w-full max-w-[380px] h-auto rounded-[20px] bg-linear-to-br from-[#111116] via-[#1C2330] to-[#111116]"
             >
                 <!-- Icon with Gradient Mask -->
                 <div
@@ -76,13 +76,13 @@
                 ></div>
 
                 <h3
-                    class="mt-1 text-[22px] text-white font-bold leading-[150%]"
+                    class="mt-1 text-[24px] text-white font-bold leading-[150%]"
                 >
                     {pillar.title}
                 </h3>
 
                 <p
-                    class="text-[16.5px] text-white font-medium leading-[150%] whitespace-nowrap"
+                    class="text-[18px] text-white font-medium leading-[150%] whitespace-nowrap"
                 >
                     {@html pillar.desc}
                 </p>
@@ -91,7 +91,7 @@
     </div>
 
     <p
-        class="z-10 mt-8 px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-8 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         Přesně tento postup <span class="text-[#FFBA00] font-bold"
             >používáme<br />při správě kapitálu</span
@@ -106,7 +106,7 @@
     />
 
     <h2
-        class="z-10 mt-16 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-16 max-w-[950px] text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Podílíme se na<br />
         investicích v řádech<br />
@@ -114,7 +114,7 @@
     </h2>
 
     <p
-        class="z-10 mt-2 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         A proto jsem se rozhodl zůstat<br />
         anonymní, abych mohl
@@ -137,8 +137,11 @@
         >
             Netoužím po slávě.<br />
             Chci vám přiblížit, jak může<br />
-            vypadat správa kapitálu na<br />
-            vyšší úrovni.
+            vypadat správa kapitálu
+            <span class="font-extrabold"
+                >na<br />
+                vyšší úrovni</span
+            >.
         </p>
     </div>
 
@@ -150,10 +153,10 @@
     </Tag>
 
     <p
-        class="z-10 mt-2 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         Na mých reálných obchodech<br />
-        <span class="text-[#FFBA00] font-bold">v reálném čase:</span>
+        <span class="text-[#FFBA00] font-bold">v reálném čase</span>:
     </p>
 
     <div

@@ -14,7 +14,7 @@
         <img
             src="/assets/addpics/logo.png"
             alt="Logo"
-            class="z-10 h-[72px] w-[65px] mt-8 mb-2 select-none pointer-events-none"
+            class="z-10 h-[80px] w-auto mt-8 mb-2 select-none pointer-events-none"
             draggable="false"
             style="max-width:160px; image-rendering: -webkit-optimize-contrast;"
         />
@@ -33,7 +33,7 @@
         </Tag>
 
         <h1
-            class="z-10 mt-2.5 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             Sledujte <span class="text-[#FFBA00]">celé mé<br />portfolio</span>
             a všechny<br />obchody živě
@@ -41,7 +41,7 @@
         </h1>
 
         <p
-            class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Naučte se moji opční strategii<br />
             přímo z praxe skrze reálné obchody,<br />
@@ -49,9 +49,7 @@
             myšlenkové procesy.
         </p>
 
-        <div
-            class="relative z-10 mx-auto mt-4 px-4 w-full md:w-full max-w-[800px]"
-        >
+        <div class="relative z-10 mx-auto mt-4 px-4 w-full md:max-w-[880px]">
             <div
                 class="-z-10 absolute inset-0 bg-[#6633EE]/30 blur-[50px] md:blur-[80px] md:scale-100"
                 style="filter: blur(50px); -webkit-filter: blur(50px); will-change: transform; transform: translate3d(0, 0, 0);"
@@ -77,7 +75,7 @@
                     <img
                         src="/assets/addpics/lclogo.png"
                         alt="LC Logo"
-                        class="w-[53px] h-[80px] mr-[42px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        class="w-[48px] h-[72px] md:w-[53px] md:h-[80px] mr-[42px] md:mr-[130px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>
@@ -86,7 +84,7 @@
                     <img
                         src="/assets/addpics/forbeslogo.png"
                         alt="Forbes Logo"
-                        class="w-[169px] h-[43px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        class="w-[152px] h-[39px] md:w-[169px] md:h-[43px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>
@@ -95,7 +93,7 @@
                     <img
                         src="/assets/addpics/oklogo.png"
                         alt="OK Logo"
-                        class="w-[63px] h-[44px] ml-[34px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        class="w-[57px] h-[40px] md:w-[63px] md:h-[44px] ml-[34px] md:ml-[120px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>

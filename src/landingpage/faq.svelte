@@ -53,10 +53,10 @@
     </Tag>
 
     <h2
-        class="z-10 mt-6 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Ujistěte se, že děláte<br />
-        správné rozhodnutí
+        <span class="text-[#FFBA00]">správné rozhodnutí</span>
     </h2>
 
     <div class="z-10 mt-12 flex flex-col gap-4 w-full px-4 max-w-[800px]">

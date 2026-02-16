@@ -72,7 +72,7 @@
         </Tag>
 
         <!-- Heading Section -->
-        <div class="relative flex flex-col items-center w-full mt-2.5">
+        <div class="relative flex flex-col items-center w-full mt-2">
             <div
                 class="absolute top-1/2 left-1/2 w-[340px] h-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FFBA00]/15 blur-[50px] pointer-events-none"
                 style="filter: blur(50px); -webkit-filter: blur(50px); will-change: filter, transform; transform: translate3d(0, 0, 0);"
@@ -86,7 +86,7 @@
         </div>
 
         <p
-            class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Komunita je zatím otevřená<br />
             pro nové členy

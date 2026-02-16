@@ -32,7 +32,7 @@
 
     // Config
     const colWidth = $derived(isDesktop ? 425 : 340);
-    const gap = 24;
+    const gap = $derived(isDesktop ? 24 : 12);
     const totalColumns = $derived(itemGroups.length);
 
     // Responsive totalPages: all items on mobile, peek effect on desktop
@@ -52,6 +52,55 @@
         };
     });
 
+    let isScrollingProgrammatically = false;
+
+    // Custom easing function for a premium slide feel
+    function easeOutQuart(t: number) {
+        return 1 - --t * t * t * t;
+    }
+
+    function animateScroll(target: number, duration: number) {
+        if (!scrollContainer) return;
+        const start = scrollContainer.scrollLeft;
+        const change = target - start;
+        let startTime: number | null = null;
+
+        isScrollingProgrammatically = true;
+
+        function animation(currentTime: number) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+
+            scrollContainer.scrollLeft =
+                start + change * easeOutQuart(progress);
+
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            } else {
+                isScrollingProgrammatically = false;
+            }
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    function handleScroll() {
+        if (isScrollingProgrammatically || !scrollContainer) return;
+
+        const currentScroll = scrollContainer.scrollLeft;
+        const itemWidth = (isDesktop ? 425 : 340) + gap;
+        const newIndex = Math.round(currentScroll / itemWidth);
+
+        if (
+            newIndex !== currentIndex &&
+            newIndex >= 0 &&
+            newIndex < totalPages
+        ) {
+            currentIndex = newIndex;
+        }
+    }
+
     function scrollTo(index: number) {
         if (!scrollContainer) return;
 
@@ -64,10 +113,7 @@
         const currentWidth = isDesktop ? 425 : 340;
         const targetLeft = index * (currentWidth + gap);
 
-        scrollContainer.scrollTo({
-            left: targetLeft,
-            behavior: "smooth",
-        });
+        animateScroll(targetLeft, 600); // 600ms for visible slide animation
     }
 
     function next() {
@@ -81,6 +127,7 @@
     function setPage(index: number) {
         scrollTo(index);
     }
+
     let isDragging = $state(false);
     let startX = 0;
     let scrollStart = 0;
@@ -117,7 +164,7 @@
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("mouseup", handleMouseUp);
 
-        // Snap to nearest page after drag
+        // Snap to nearest page after drag using our custom animation
         if (scrollContainer) {
             const currentScroll = scrollContainer.scrollLeft;
             const itemWidth = (isDesktop ? 425 : 340) + gap;
@@ -152,44 +199,41 @@
         </h1>
 
         <p
-            class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Už více než 450 investorů se učí,<br />
             jak využít opce jako doplněk svého<br />
             portfolia -
-            <span class="text-[#FFBA00]">a teď je řada na vás</span>.
+            <span class="text-[#FFBA00] font-bold">a teď je řada na vás</span>.
         </p>
 
         <!-- FlyonUI Carousel Structure -->
         <div class="relative w-full mt-10 z-10 group px-0">
             <!-- Carousel container with native scroll and snap -->
+            <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
             <div
                 bind:this={scrollContainer}
-                class="carousel flex overflow-x-auto snap-x snap-mandatory no-scrollbar py-4"
+                class="carousel flex overflow-x-auto no-scrollbar py-4"
                 onmousedown={handleMouseDown}
+                onscroll={handleScroll}
                 role="region"
                 aria-label="Testimonials carousel"
-                style="cursor: {isDragging
+                style="overflow-x: overlay; cursor: {isDragging
                     ? 'grabbing'
-                    : 'grab'}; user-select: none;"
+                    : 'grab'}; user-select: none; scroll-snap-type: x mandatory;"
             >
-                <!-- 
-                    Padding Calc: 
-                    Mobile: pl/pr-[calc(50%-170px)] centers first and last items with equal padding on both sides
-                    XL: pl/pr-[max(0px,calc(50%-534px))] shows peek effect (Item 0 visible left, Item N visible right)
-                -->
                 <div
-                    class="carousel-body flex gap-6 w-max pl-[calc(50%-170px)] pr-[calc(50%-170px)] xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
+                    class="carousel-body flex gap-3 xl:gap-6 w-max pl-5 pr-5 xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
                 >
                     {#each itemGroups as group, i}
                         <!-- Slide -->
                         <div
-                            class="carousel-slide snap-center shrink-0 w-[340px] md:w-[425px] flex flex-col gap-6"
+                            class="carousel-slide snap-center shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
                         >
                             {#each group as itemNumber}
                                 <!-- Image -->
                                 <div
-                                    class="w-full h-[200px] md:h-[250px] px-5 py-2 md:px-6.5 md:py-2.5 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                    class="w-full h-[200px] md:h-[250px] py-2 md:px-6.5 md:py-2.5 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
                                 >
                                     <img
                                         src="/assets/testimonials/Group {itemNumber}.png"

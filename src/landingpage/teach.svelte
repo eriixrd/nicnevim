@@ -13,14 +13,15 @@
     </Tag>
 
     <h2
-        class="z-10 mt-6 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Naučte se moji<br />
-        opční strategii <span class="text-[#FFBA00]">přímo<br />z praxe</span>
+        opční strategii
+        <span class="text-[#FFBA00]">přímo<br />z praxe</span>
     </h2>
 
     <p
-        class="z-10 mt-2 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         Skrze reálné obchody, strukturu<br />
         portfolia a detailní myšlenkové<br />

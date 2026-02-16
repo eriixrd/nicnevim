@@ -14,15 +14,14 @@
     </Tag>
 
     <h1
-        class="z-10 mt-6 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Členové komunity<br />
-        získají přístup ke<br />
         dvěma <span class="text-[#FFBA00]">doplňkovým<br />výhodám</span>
     </h1>
 
     <div
-        class="z-10 mt-12 relative flex flex-col md:flex-row items-center justify-center gap-8 w-full px-4 max-w-[420px] md:max-w-[840px]"
+        class="z-10 mt-12 relative flex flex-col items-center md:flex-row md:items-stretch justify-center gap-8 w-full px-4 max-w-[420px] md:max-w-[840px]"
     >
         <!-- Bonus #1 -->
         <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">
@@ -63,7 +62,7 @@
                 <h3
                     class="mt-4 text-white text-[22px] md:text-[24px] font-bold leading-[1.3] text-left"
                 >
-                    Přístup ke <span class="text-[#FFBA00]"
+                    Přístup ke <span class="text-[#FFBA00] font-bold"
                         >450+ zkušeným<br />investorům</span
                     > v komunitě
                 </h3>
@@ -139,7 +138,7 @@
                 <h3
                     class="mt-4 text-white text-[22px] md:text-[24px] font-bold leading-[1.3] text-left"
                 >
-                    <span class="text-[#FFBA00]"
+                    <span class="text-[#FFBA00] font-bold"
                         >Bloomberg výhledy,<br />valuace & fundament</span
                     >
                     k<br />firmám z watchlistu

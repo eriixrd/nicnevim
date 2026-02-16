@@ -19,7 +19,7 @@
     </Tag>
 
     <h1
-        class="z-10 mt-2.5 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Cílem <span class="text-[#FFBA00]">mojí strategie</span><br />
         je dlouhodobé<br />
@@ -28,11 +28,13 @@
     </h1>
 
     <p
-        class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Provádím <span class="text-[#FFBA00]">vyšší stovky obchodů</span><br />
-        <span class="text-[#FFBA00]">ročně</span> a opce využívám k efektivní<br
-        />
+        Provádím <span class="text-[#FFBA00] font-bold"
+            >vyšší stovky obchodů</span
+        ><br />
+        <span class="text-[#FFBA00] font-bold">ročně</span> a opce využívám k
+        efektivní<br />
         práci s akciovým portfoliem.
     </p>
 
