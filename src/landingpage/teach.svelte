@@ -59,6 +59,11 @@
         </div>
     </div>
     <button
+        onclick={() => {
+            document
+                .getElementById("reviews")
+                ?.scrollIntoView({ behavior: "smooth" });
+        }}
         class="group relative mt-15 md:-mt-10 px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
     >
         <span class="relative z-10">Přidat se do komunity</span>

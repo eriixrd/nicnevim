@@ -64,6 +64,8 @@
 
     const annualHeading = "Všechny výhody měsíčního<br />členství a navíc:";
 
+    let { openModal } = $props();
+
     // Data
     const allItems = [
         32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
@@ -104,7 +106,7 @@
         };
     });
 
-    let isScrollingProgrammatically = false;
+    let isScrollingProgrammatically = $state(false);
 
     // Custom easing function for a premium slide feel
     function easeOutQuart(t: number) {
@@ -259,6 +261,7 @@
     <!-- FlyonUI Carousel Structure -->
     <div class="relative w-full mt-10 z-10 group px-0">
         <!-- Carousel container with native scroll and snap -->
+        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <div
             bind:this={scrollContainer}
             class="carousel flex overflow-x-auto no-scrollbar py-4"
@@ -268,7 +271,10 @@
             aria-label="Reviews carousel"
             style="cursor: {isDragging
                 ? 'grabbing'
-                : 'grab'}; user-select: none; scroll-snap-type: x mandatory;"
+                : 'grab'}; user-select: none; scroll-snap-type: {isDragging ||
+            isScrollingProgrammatically
+                ? 'none'
+                : 'x mandatory'};"
         >
             <div
                 class="carousel-body flex gap-3 xl:gap-6 w-max pl-5 pr-5 xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
@@ -276,7 +282,8 @@
                 {#each itemGroups as group, i}
                     <!-- Slide -->
                     <div
-                        class="carousel-slide snap-center shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
+                        class="carousel-slide shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
+                        style="scroll-snap-align: center;"
                     >
                         {#each group as itemNumber}
                             <!-- Image -->
@@ -350,7 +357,10 @@
         draggable="false"
     />
 
-    <div class="z-10 mt-16 flex flex-col items-center w-full">
+    <div
+        id="reviews"
+        class="z-10 mt-16 flex flex-col items-center w-full scroll-mt-[22px] px-5 md:px-4"
+    >
         <Tag className="mx-auto">
             <span class="text-[18px]">🔒</span>
             <span class="text-[16px] text-white font-medium leading-none ml-1">
@@ -408,6 +418,7 @@
                         </p>
 
                         <button
+                            onclick={openModal}
                             class="group relative mt-5 w-[85%] py-2 bg-[#FFC300] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
                         >
                             <span class="relative z-10">{pkg.buttonText}</span>

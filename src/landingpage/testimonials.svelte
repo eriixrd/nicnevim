@@ -52,7 +52,7 @@
         };
     });
 
-    let isScrollingProgrammatically = false;
+    let isScrollingProgrammatically = $state(false);
 
     // Custom easing function for a premium slide feel
     function easeOutQuart(t: number) {
@@ -220,7 +220,10 @@
                 aria-label="Testimonials carousel"
                 style="overflow-x: overlay; cursor: {isDragging
                     ? 'grabbing'
-                    : 'grab'}; user-select: none; scroll-snap-type: x mandatory;"
+                    : 'grab'}; user-select: none; scroll-snap-type: {isDragging ||
+                isScrollingProgrammatically
+                    ? 'none'
+                    : 'x mandatory'};"
             >
                 <div
                     class="carousel-body flex gap-3 xl:gap-6 w-max pl-5 pr-5 xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
@@ -228,7 +231,8 @@
                     {#each itemGroups as group, i}
                         <!-- Slide -->
                         <div
-                            class="carousel-slide snap-center shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
+                            class="carousel-slide shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
+                            style="scroll-snap-align: center;"
                         >
                             {#each group as itemNumber}
                                 <!-- Image -->

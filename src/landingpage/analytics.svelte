@@ -4,12 +4,12 @@
     import { onMount } from "svelte";
 
     const team = [
-        { name: "Colombo", role: "Analytik", img: "Colombo.png" },
-        { name: "Martin", role: "Analytik", img: "Martin.png" },
-        { name: "Mike", role: "Analytik", img: "Mike.png" },
-        { name: "Pavel", role: "Analytik", img: "Pavel.png" },
-        { name: "Stephen", role: "Analytik", img: "Stephen.png" },
-        { name: "Tyler", role: "Analytik", img: "Tyler.png" },
+        { name: "Colombo", role: "Analytik", img: "Colombo.svg" },
+        { name: "Martin", role: "Analytik", img: "Martin.svg" },
+        { name: "Mike", role: "Analytik", img: "Mike.svg" },
+        { name: "Pavel", role: "Analytik", img: "Pavel.svg" },
+        { name: "Stephen", role: "Analytik", img: "Stephen.svg" },
+        { name: "Tyler", role: "Analytik", img: "Tyler.svg" },
     ];
 
     // Find Mike's index to start centered on him
@@ -84,11 +84,51 @@
         }
 
         isDragging = false;
+        // The transition-all in the template will handle the smooth return to 0
         dragDistance = 0;
 
         setTimeout(() => {
             wasDragging = false;
         }, 100);
+    }
+
+    let refContainer = $state<HTMLDivElement | null>(null);
+    let scrollThumbProgress = $state(0);
+    let isDraggingThumb = $state(false);
+
+    function handleRefScroll() {
+        if (!refContainer || isDraggingThumb) return;
+        const { scrollLeft, scrollWidth, clientWidth } = refContainer;
+        scrollThumbProgress = scrollLeft / (scrollWidth - clientWidth);
+    }
+
+    function handleThumbDrag(e: MouseEvent | TouchEvent) {
+        if (!isDraggingThumb || !refContainer) return;
+        const track = document.getElementById("ref-track");
+        if (!track) return;
+
+        const rect = track.getBoundingClientRect();
+        const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+        let progress = (clientX - rect.left) / rect.width;
+        progress = Math.max(0, Math.min(1, progress));
+
+        scrollThumbProgress = progress;
+        const { scrollWidth, clientWidth } = refContainer;
+        refContainer.scrollLeft = progress * (scrollWidth - clientWidth);
+    }
+
+    function startThumbDrag(e: MouseEvent | TouchEvent) {
+        isDraggingThumb = true;
+        if (!("touches" in e)) {
+            window.addEventListener("mousemove", handleThumbDrag);
+            window.addEventListener("mouseup", stopThumbDrag);
+        }
+    }
+
+    function stopThumbDrag() {
+        isDraggingThumb = false;
+        window.removeEventListener("mousemove", handleThumbDrag);
+        window.removeEventListener("mouseup", stopThumbDrag);
     }
 </script>
 
@@ -114,8 +154,9 @@
 
     <div class="relative w-full -mt-4 md:-mt-6 flex flex-col items-center">
         <!-- Slider Container -->
+        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <div
-            class="relative w-full flex items-center justify-center overflow-visible h-[450px] md:h-[550px]"
+            class="relative w-full flex items-center justify-center overflow-visible h-[450px] md:h-[630px]"
             role="region"
             aria-label="Team members slider"
             onmousedown={handleDragStart}
@@ -151,7 +192,7 @@
                         : 'transition-all duration-700 ease-out'}"
                     style="
                         transform: translateX({normalizedOffset *
-                        (isDesktop ? 400 : 220) +
+                        (isDesktop ? 460 : 220) +
                         dragDistance}px) scale({normalizedOffset === 0
                         ? 1
                         : 0.8});
@@ -170,7 +211,7 @@
                         e.key === "Enter" && !wasDragging && setPage(i)}
                 >
                     <div
-                        class="relative w-[270px] md:w-[337px] h-auto overflow-hidden"
+                        class="relative w-[270px] md:w-[388px] h-auto overflow-hidden"
                     >
                         <img
                             src="/assets/team/{member.img}"
@@ -287,25 +328,63 @@
         </h2>
     </div>
 
-    <div class="z-10 mt-4 flex flex-col items-center gap-4 w-full px-4">
-        <img
-            src="/assets/addpics/reference 1 1.png"
-            alt="Reference 1"
-            class="w-full md:max-w-[380px] border border-white/5 rounded-[10px]"
-        />
-        <img
-            src="/assets/addpics/Reference 2 1.png"
-            alt="Reference 2"
-            class="w-full md:max-w-[380px] border border-white/5 rounded-[10px]"
-        />
-        <img
-            src="/assets/addpics/Reference 3 1.png"
-            alt="Reference 3"
-            class="w-full md:max-w-[380px] border border-white/5 rounded-[10px]"
-        />
+    <!-- Reference Images with Safari-style Scrollbar on Mobile -->
+    <div class="z-10 mt-4 w-full flex flex-col items-center overflow-hidden">
+        <div
+            bind:this={refContainer}
+            onscroll={handleRefScroll}
+            class="flex md:flex-col items-start md:items-center gap-4 md:gap-5 w-full px-5 md:px-4 overflow-x-auto md:overflow-x-visible no-scrollbar snap-x snap-mandatory"
+        >
+            <img
+                src="/assets/addpics/reference 1 1.png"
+                alt="Reference 1"
+                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
+            />
+            <img
+                src="/assets/addpics/Reference 2 1.png"
+                alt="Reference 2"
+                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
+            />
+            <img
+                src="/assets/addpics/Reference 3 1.png"
+                alt="Reference 3"
+                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
+            />
+        </div>
+
+        <!-- Safari-style Scrollbar (Mobile only) -->
+        <div class="md:hidden w-full px-4 mt-8 mb-4 flex justify-center">
+            <div
+                id="ref-track"
+                class="relative w-full max-w-[120px] h-[14px] bg-white/10 rounded-full p-[3px] cursor-pointer"
+                onmousedown={startThumbDrag}
+                ontouchstart={startThumbDrag}
+                ontouchmove={handleThumbDrag}
+                ontouchend={stopThumbDrag}
+                role="slider"
+                tabindex="0"
+                aria-label="Scroll balance gallery"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow={Math.round(scrollThumbProgress * 100)}
+            >
+                <div
+                    class="h-full bg-[#999999] rounded-full"
+                    style="width: 40%; margin-left: {scrollThumbProgress *
+                        60}%; transition: {isDraggingThumb
+                        ? 'none'
+                        : 'margin-left 0.1s ease-out'};"
+                ></div>
+            </div>
+        </div>
     </div>
 
     <button
+        onclick={() => {
+            document
+                .getElementById("reviews")
+                ?.scrollIntoView({ behavior: "smooth" });
+        }}
         class="group relative px-13 mt-8 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
     >
         <span class="relative z-10">Chci se přidat!</span>
@@ -323,5 +402,12 @@
         -webkit-text-fill-color: transparent;
         color: transparent;
         display: inline-block;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 </style>

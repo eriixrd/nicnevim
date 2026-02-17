@@ -38,11 +38,17 @@
             <div
                 class="relative flex flex-col items-start w-full h-full px-5 pt-5 pb-8 rounded-[19px] bg-linear-to-br from-[#1C1D19] to-[#0B0B0A]"
             >
-                <!-- Image Placeholder -->
+                <!-- Image -->
                 <div
                     class="relative w-full rounded-[15px] overflow-hidden bg-white/5"
                     style="aspect-ratio: 1.44 / 1;"
-                ></div>
+                >
+                    <img
+                        src="/assets/addpics/Group 58.png"
+                        alt="Komunita investorů"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
 
                 <!-- Number Tag -->
                 <div class="relative p-px rounded-[10px] mt-4">
@@ -114,11 +120,17 @@
             <div
                 class="relative flex flex-col items-start w-full h-full px-5 pt-5 pb-8 rounded-[19px] bg-linear-to-br from-[#1C1D19] to-[#0B0B0A]"
             >
-                <!-- Image Placeholder -->
+                <!-- Image -->
                 <div
                     class="relative w-full rounded-[15px] overflow-hidden bg-white/5"
                     style="aspect-ratio: 1.44 / 1;"
-                ></div>
+                >
+                    <img
+                        src="/assets/addpics/Group 59.png"
+                        alt="Bloomberg výhledy"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
 
                 <!-- Number Tag -->
                 <div class="relative p-px rounded-[10px] mt-4">
@@ -177,6 +189,11 @@
         </div>
     </div>
     <button
+        onclick={() => {
+            document
+                .getElementById("reviews")
+                ?.scrollIntoView({ behavior: "smooth" });
+        }}
         class="group relative px-13 mt-8 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
     >
         <span class="relative z-10">Chci členství s výhodami!</span>

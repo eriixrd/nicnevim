@@ -9,7 +9,7 @@
         style="filter: blur(70px); -webkit-filter: blur(70px); will-change: filter; transform: translate3d(0, 0, 0);"
     ></div>
     <div
-        class="relative flex flex-col items-center justify-center w-full max-w-full sm:px-0"
+        class="relative flex flex-col items-center justify-center w-full max-w-full"
     >
         <img
             src="/assets/addpics/logo.png"
@@ -100,6 +100,11 @@
             </div>
 
             <button
+                onclick={() => {
+                    document
+                        .getElementById("packages")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
             >
                 <span class="relative z-10">Chci vědět víc!</span>

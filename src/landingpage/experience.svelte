@@ -129,7 +129,7 @@
     />
 
     <div
-        class="flex items-center justify-center w-[384px] md:w-[480px] h-[186px] md:h-[233px] -mt-5 z-11 mx-auto rounded-[15px] p-6"
+        class="flex items-center justify-center w-fit h-fit -mt-5 z-11 mx-auto rounded-[15px] px-[25px] py-[25px] md:px-[38px]"
         style="background: linear-gradient(to bottom right, #E4A600 25%, #FFD972 50%, #E4A600 75%);"
     >
         <p
@@ -172,6 +172,11 @@
         {/each}
     </div>
     <button
+        onclick={() => {
+            document
+                .getElementById("reviews")
+                ?.scrollIntoView({ behavior: "smooth" });
+        }}
         class="group mt-10 relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
     >
         <span class="relative z-10">Chci se začít vzdělávat!</span>

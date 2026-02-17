@@ -11,17 +11,22 @@
 	import Faq from "../landingpage/faq.svelte";
 	import Teach from "../landingpage/teach.svelte";
 	import Footer from "../landingpage/footer.svelte";
+	import Modal from "../components/modal.svelte";
+
+	let isModalOpen = $state(false);
 </script>
 
 <Hero />
 <Testimonials />
-<Packages />
+<Packages openModal={() => (isModalOpen = true)} />
 <Strategy />
 <Experience />
 <Analytics />
 <Community />
 <Bonus />
-<Review />
+<Review openModal={() => (isModalOpen = true)} />
 <Faq />
 <Teach />
 <Footer />
+
+<Modal bind:isOpen={isModalOpen} />

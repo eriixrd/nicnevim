@@ -4,6 +4,7 @@
 
     const titles = [
         {
+            image: "/assets/addpics/Group 65.png",
             title: 'Přístup ke všem mým<br />obchodům <span class="text-[#FFBA00] font-bold">v reálném čase</span>',
             features: [
                 "Získáte přístup do sekce, kde sdílím<br />všechny své nákupy ihned jak je udělám.<br />O každém vstupu i výstupu z pozice jste<br />vždy informování oznámením na mobilu.",
@@ -11,6 +12,7 @@
             ],
         },
         {
+            image: "/assets/addpics/Group 64.png",
             title: 'Přístup k celému <span class="text-[#FFBA00] font-bold">veřejnému</span><br /><span class="text-[#FFBA00] font-bold">portfoliu</span> <span class="text-[18px] font-medium text-white/90">(~2.000.000 USD)</span>',
             features: [
                 "Uvidíte celé portfolio přehledně na<br />jednom místě - všechny vypsané PUT<br />a CALL opce, akcie, které držím,<br />i dlouhodobé pozice včetně kryptoměn.",
@@ -18,6 +20,7 @@
             ],
         },
         {
+            image: "/assets/addpics/Group 62.png",
             title: '<span class="text-[#FFBA00] font-bold">Mini-portfolio:</span> Jak naši<br />opční strategii využít s<br /><span class="text-[#FFBA00] font-bold">menším kapitálem</span>',
             features: [
                 "Jedná se o zcela nové portfolio, na<br />kterém vám přímo v praxi ukazujeme,<br />jak využívat opce i s menším kapitálem<br />(200.000 Kč).",
@@ -25,6 +28,7 @@
             ],
         },
         {
+            image: "/assets/addpics/Group 63.png",
             title: '<span class="text-[#FFBA00] font-bold">Pravidelný update:</span> Náš<br />aktuální pohled na trhy<br />a portfolio',
             features: [
                 "Pravidelný video-update, ve kterém<br />rozebíráme aktuální stav portfolia,<br />jednotlivé pozice a změny na trzích.",
@@ -32,6 +36,7 @@
             ],
         },
         {
+            image: "/assets/addpics/Group 61.png",
             title: '<span class="text-[#FFBA00] font-bold">Watchlist ~50 zajímavých</span><br /><span class="text-[#FFBA00] font-bold">firem</span> a ceny, na kterých<br />plánujeme obchodovat',
             features: [
                 "Získáte přístup k aktualizovanému<br />seznamu firem, které dlouhodobě<br />sledujeme a plánujeme vypsat opce.<br />Zároveň u nich uvádíme výpočet<br />vnitřní hodnoty.",
@@ -39,6 +44,7 @@
             ],
         },
         {
+            image: "/assets/addpics/Group 60.png",
             title: '<span class="text-[#FFBA00] font-bold">Praktické návody:</span> Jak<br />obchodovat opce <span class="text-[#FFBA00] font-bold">krok za</span><br /><span class="text-[#FFBA00] font-bold">krokem</span>',
             features: [
                 "Získáte strukturované návody, které<br />popisují celý proces práce s opcemi – od<br />výběru titulu až po řízení pozice.",
@@ -94,7 +100,13 @@
                 >
                     <div
                         class="relative w-full rounded-[15px] overflow-hidden bg-yellow-500/10 aspect-[1.44/1]"
-                    ></div>
+                    >
+                        <img
+                            src={pkg.image}
+                            alt={pkg.title.replace(/<[^>]*>?/gm, "")}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
 
                     <!-- Number Tag -->
                     <div class="relative p-px rounded-[10px] mt-4">
@@ -140,6 +152,11 @@
         {/each}
     </div>
     <button
+        onclick={() => {
+            document
+                .getElementById("reviews")
+                ?.scrollIntoView({ behavior: "smooth" });
+        }}
         class="group relative px-13 mt-8 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
     >
         <span class="relative z-10">Chci se přidat!</span>

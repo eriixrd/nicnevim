@@ -1,6 +1,48 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import AppleEmoji from "../components/AppleEmoji.svelte";
     import Tag from "../components/Tag.svelte";
+
+    let graphContainer = $state<HTMLDivElement | null>(null);
+    let scrollThumbProgress = $state(0);
+    let isDraggingThumb = $state(false);
+
+    function handleScroll() {
+        if (!graphContainer || isDraggingThumb) return;
+        const { scrollLeft, scrollWidth, clientWidth } = graphContainer;
+        if (scrollWidth > clientWidth) {
+            scrollThumbProgress = scrollLeft / (scrollWidth - clientWidth);
+        }
+    }
+
+    function handleThumbDrag(e: MouseEvent | TouchEvent) {
+        if (!isDraggingThumb || !graphContainer) return;
+        const track = document.getElementById("strategy-track");
+        if (!track) return;
+
+        const rect = track.getBoundingClientRect();
+        const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+        let progress = (clientX - rect.left) / rect.width;
+        progress = Math.max(0, Math.min(1, progress));
+
+        scrollThumbProgress = progress;
+        const { scrollWidth, clientWidth } = graphContainer;
+        graphContainer.scrollLeft = progress * (scrollWidth - clientWidth);
+    }
+
+    function startThumbDrag(e: MouseEvent | TouchEvent) {
+        isDraggingThumb = true;
+        if (!("touches" in e)) {
+            window.addEventListener("mousemove", handleThumbDrag);
+            window.addEventListener("mouseup", stopThumbDrag);
+        }
+    }
+
+    function stopThumbDrag() {
+        isDraggingThumb = false;
+        window.removeEventListener("mousemove", handleThumbDrag);
+        window.removeEventListener("mouseup", stopThumbDrag);
+    }
 </script>
 
 <section
@@ -124,7 +166,7 @@
     </p>
 
     <!-- Graph Section -->
-    <div class="z-10 relative w-full mt-6">
+    <div class="z-10 relative w-full mt-6 flex flex-col items-center">
         <!-- Graph Glow -->
         <div
             class="absolute top-1/2 left-1/2 w-[350px] h-[250px] md:w-[700px] md:h-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/15 blur-[130px] pointer-events-none z-0"
@@ -132,17 +174,45 @@
         ></div>
 
         <div
+            bind:this={graphContainer}
+            onscroll={handleScroll}
             class="relative z-10 w-full overflow-x-auto no-scrollbar scroll-smooth"
         >
             <div
-                class="flex justify-start md:justify-center w-max md:w-full max-w-[800px] mx-auto px-4 md:px-0"
+                class="flex justify-start md:justify-center w-max md:w-full mx-auto px-4 md:px-0"
             >
                 <img
                     src="/assets/images/graph.png"
                     alt="Strategy Growth Graph"
-                    class="w-[610px] h-auto md:w-full md:aspect-video rounded-[20px] shadow-2xl object-cover"
+                    class="w-[610px] h-auto md:w-full md:max-w-[800px] rounded-[20px] shadow-2xl object-cover"
                     style="image-rendering: -webkit-optimize-contrast;"
                 />
+            </div>
+        </div>
+
+        <!-- Safari-style Scrollbar (Mobile only) -->
+        <div class="md:hidden w-full px-4 mt-8 mb-4 flex justify-center">
+            <div
+                id="strategy-track"
+                class="relative w-full max-w-[120px] h-[14px] bg-white/10 rounded-full p-[3px] cursor-pointer"
+                onmousedown={startThumbDrag}
+                ontouchstart={startThumbDrag}
+                ontouchmove={handleThumbDrag}
+                ontouchend={stopThumbDrag}
+                role="slider"
+                tabindex="0"
+                aria-label="Scroll strategy graph"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow={Math.round(scrollThumbProgress * 100)}
+            >
+                <div
+                    class="h-full bg-[#999999] rounded-full"
+                    style="width: 40%; margin-left: {scrollThumbProgress *
+                        60}%; transition: {isDraggingThumb
+                        ? 'none'
+                        : 'margin-left 0.1s ease-out'};"
+                ></div>
             </div>
         </div>
     </div>
