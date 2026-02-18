@@ -7,6 +7,10 @@
     let isModalOpen = $state(false);
 </script>
 
+<svelte:head>
+    <title>NIC NEVIM - Potvrzení členství</title>
+</svelte:head>
+
 <main>
     <Hero openModal={() => (isModalOpen = true)} />
     <Faq />

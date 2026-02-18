@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "nicnevim",
+  "short_name": "nicnevim",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

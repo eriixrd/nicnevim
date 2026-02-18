@@ -16,6 +16,10 @@
 	let isModalOpen = $state(false);
 </script>
 
+<svelte:head>
+	<title>NIC NEVIM investiční komunita</title>
+</svelte:head>
+
 <Hero />
 <Testimonials />
 <Packages openModal={() => (isModalOpen = true)} />
