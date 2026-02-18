@@ -18,14 +18,6 @@
         isOpen = false;
         if (onClose) onClose();
     }
-
-    const avatars = [
-        "/assets/team/Mike.svg",
-        "/assets/team/Pavel.svg",
-        "/assets/team/Martin.svg",
-        "/assets/team/Tyler.svg",
-        "/assets/team/Stephen.svg",
-    ];
 </script>
 
 {#if isOpen}
@@ -140,51 +132,17 @@
                 </button>
 
                 <!-- Small text -->
-                <p class="text-white/40 text-[14px] leading-[150%] mt-6 mb-5">
+                <p class="text-white/40 text-[14px] leading-[150%] mt-6 mb-1">
                     Členství lze kdykoliv zrušit
                 </p>
 
                 <!-- Footer -->
-                <div class="flex flex-col items-center">
-                    <div class="flex items-center">
-                        <div class="flex -space-x-3 mr-4">
-                            {#each avatars as avatar}
-                                <div
-                                    class="w-10 h-10 rounded-full border-2 border-[#0A0A0A] overflow-hidden bg-gray-800"
-                                >
-                                    <img
-                                        src={avatar}
-                                        alt="User avatar"
-                                        class="w-full h-full object-cover"
-                                    />
-                                </div>
-                            {/each}
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex gap-1 mb-1">
-                                {#each Array(5) as _}
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="#FFBA00"
-                                        stroke="#FFBA00"
-                                        stroke-width="1"
-                                        ><polygon
-                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                        ></polygon></svg
-                                    >
-                                {/each}
-                                <span
-                                    class="text-white font-bold ml-1 text-[16px]"
-                                    >(4.9)</span
-                                >
-                            </div>
-                            <span class="text-white/40 text-[14px]"
-                                >450+ hodnocení</span
-                            >
-                        </div>
-                    </div>
+                <div class="flex items-center justify-center pt-4 pb-2">
+                    <img
+                        src="/assets/addpics/formreview.png"
+                        alt="Reviews and ratings"
+                        class="w-full max-w-[220px] md:max-w-[250px] h-auto object-contain"
+                    />
                 </div>
             </div>
         </div>

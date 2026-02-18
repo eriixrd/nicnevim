@@ -17,7 +17,11 @@
         class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
         Členové komunity<br />
-        dvěma <span class="text-[#FFBA00]">doplňkovým<br />výhodám</span>
+        získají přístup ke<br class="md:hidden" /> dvěma
+        <br class="hidden md:block" />
+        <span class="text-[#FFBA00]"
+            >doplňkovým<br class="md:hidden" /> výhodám</span
+        >
     </h1>
 
     <div

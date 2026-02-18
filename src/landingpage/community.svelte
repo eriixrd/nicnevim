@@ -72,10 +72,13 @@
         <h2
             class="z-10 mt-2 max-w-[950px] text-center text-[34px] md:text-[40px] text-white font-extrabold leading-[1.1]"
         >
-            Pokud se dnes<br />
-            přidáte <span class="text-[#FFBA00]">do komunity</span>,<br />
-            ihned získáte přístup<br />
-            ke <span class="text-[#FFBA00]">všemu obsahu</span>
+            Pokud se dnes <br class="md:hidden" /> přidáte
+            <br class="hidden md:block" />
+            <span class="text-[#FFBA00]">do komunity</span>,
+            <br class="md:hidden" />
+            ihned získáte <br class="hidden md:block" />
+            přístup <br class="md:hidden" /> ke
+            <span class="text-[#FFBA00]">všemu obsahu</span>
         </h2>
     </div>
 

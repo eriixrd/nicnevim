@@ -195,7 +195,7 @@
             class="z-10 mt-2.5 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             Jak komunitu<br />hodnotí
-            <span class="text-[#FFBA00]">členové?</span>
+            <span class="text-[#FFBA00]">členové</span>?
         </h1>
 
         <p

@@ -55,9 +55,8 @@
     <h2
         class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Vše, co potřebujete<br class="md:hidden" /> vědět
-        <br class="hidden md:block" />
-        <span class="text-[#FFBA00]">před vstupem</span>
+        Ujistěte se, že děláte<br />
+        <span class="text-[#FFBA00]">správné rozhodnutí</span>
     </h2>
 
     <div class="z-10 mt-12 flex flex-col gap-4 w-full px-4 max-w-[800px]">
@@ -123,5 +122,24 @@
                 </div>
             </div>
         {/each}
+        <button
+            onclick={() => {
+                const element = document.getElementById("packages");
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    const offset = window.innerWidth < 768 ? 20 : 140;
+                    window.scrollTo({
+                        top: window.pageYOffset + rect.top - offset,
+                        behavior: "smooth",
+                    });
+                }
+            }}
+            class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
+        >
+            <span class="relative z-10">Přidat se do komunity</span>
+            <div
+                class="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] transition-all duration-700 ease-in-out group-hover:left-full"
+            ></div>
+        </button>
     </div>
 </section>

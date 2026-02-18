@@ -6,7 +6,7 @@
     class="relative flex flex-col items-center justify-center w-full py-20 overflow-hidden"
 >
     <Tag className="mx-auto mt-2.5">
-        <span class="text-[18px] -mt-1">💎</span>
+        <span class="text-[18px]">💎</span>
         <span class="text-[16px] text-white font-medium leading-none ml-1">
             Teď je řada na vás
         </span>
@@ -38,7 +38,7 @@
         ></div>
         <!-- Left Image (Vertical) -->
         <div
-            class="relative z-20 w-[152px] scale-[120%] md:scale-[70%] h-[203px] md:w-[480px] md:h-auto -mr-[30px] md:-mr-[270px]"
+            class="relative z-20 w-[152px] scale-[120%] md:scale-[70%] h-[203px] md:w-[480px] md:h-auto -mr-[50px] md:-mr-[300px]"
         >
             <img
                 src="/assets/addpics/BB23CC5D-9AB2-41A6-A02C-29AAFBAFA68B_1_105_c 1.png"

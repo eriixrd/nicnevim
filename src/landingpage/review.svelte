@@ -243,19 +243,28 @@
     <h2
         class="z-10 mt-2 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Takto <span class="text-[#FFBA00]">komunitu<br />hodnotí</span>
-        ostatní<br />investoři
+        Takto komunitu <br class="md:hidden" />
+        <span class="md:text-white text-[#FFBA00]">hodnotí</span>
+        <span class="hidden md:inline">ostatní</span> <br class="md:hidden" />
+        <span class="md:hidden">ostatní</span> investoři
     </h2>
 
     <!-- Subheading/Description -->
     <p
         class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Důvěřuje nám už více než 450<br />
-        investorů, kteří se s námi učí, jak<br />
-        opce efektivně využít
-        <span class="text-[#FFBA00] font-bold">jako doplněk</span><br />
-        <span class="text-[#FFBA00] font-bold">svého portfolia</span>.
+        Důvěřuje nám už více než 450 <br class="md:hidden" />
+        investorů,
+        <span class="hidden md:inline"
+            >kteří se s námi učí, jak opce efektivně využít</span
+        >
+        <br class="md:hidden" />
+        <span class="md:hidden">kteří se s námi učí, jak</span>
+        <br class="md:hidden" />
+        <span class="md:hidden">opce efektivně využít</span>
+        <span class="text-[#FFBA00] font-bold"
+            >jako doplněk <br class="md:hidden" /> svého portfolia.</span
+        >
     </p>
 
     <!-- FlyonUI Carousel Structure -->
@@ -460,7 +469,7 @@
                                         class="shrink-0 w-[15px] h-[15px] mt-[2.6px]"
                                     />
                                     <span
-                                        class="text-[16px] text-white font-medium leading-[1.25]"
+                                        class="text-[16px] md:text-[18px] text-white font-medium leading-[1.25]"
                                     >
                                         {@html feature}
                                     </span>

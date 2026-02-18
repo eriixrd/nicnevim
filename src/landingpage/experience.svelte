@@ -37,16 +37,35 @@
     </h2>
 
     <p
-        class="z-10 mt-3 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-3 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Přes 10 let profesionálního<br />
-        pokeru mě naučilo pracovat s<br />
-        rizikem, pravděpodobností<br />
-        a emocemi.<br />
-        <br />
-        Zároveň mi každý den připomíná,<br />
-        <span class="text-[#FFBA00] font-bold">že učení nikdy nekončí</span>.
+        Přes 10 let profesionálního <br class="hidden md:block" />
+        pokeru mě naučilo pracovat s <br class="md:hidden" /> rizikem,
+        <br class="hidden md:block" />
+        <span class="md:hidden">pravděpodobností</span>
+        <br class="md:hidden" />
+        <span class="md:hidden">a emocemi.</span>
+        <span class="hidden md:inline">pravděpodobností a emocemi.</span>
     </p>
+
+    <div
+        class="z-10 w-full max-w-[370px] md:max-w-[480px] h-auto border border-white/5 rounded-[20px] mt-8 flex flex-col items-center justify-start p-8 md:p-10"
+    >
+        <img
+            src="/assets/icons/info.svg"
+            alt="Info"
+            class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"
+        />
+        <p
+            class="text-white text-[20px] md:text-[24px] font-medium md:font-normal leading-[150%] text-center mt-4"
+        >
+            Zároveň mi každý den připomíná,<br />
+            <span
+                class="bg-linear-to-r from-[#D3C295] to-[#C9A44A] bg-clip-text text-transparent font-bold inline-block"
+                >že učení nikdy nekončí</span
+            >.
+        </p>
+    </div>
 
     <!-- Vertical separator line -->
     <div
@@ -55,11 +74,13 @@
     ></div>
 
     <h2
-        class="z-10 mt-10 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-10 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Z těchto zkušeností<br />
-        vycházejí <span class="text-[#FFBA00]">3 pilíře</span>,<br />
-        kterými se řídím
+        Z těchto zkušeností <br />
+        vycházejí <span class="text-[#FFBA00]">3 pilíře</span>,
+        <br class="md:hidden" />
+        kterými <br class="hidden md:block" />
+        se řídím
     </h2>
 
     <div
@@ -106,19 +127,22 @@
     />
 
     <h2
-        class="z-10 mt-16 max-w-[950px] text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
+        class="z-10 mt-16 max-w-[950px] px-4 text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Podílíme se na<br />
-        investicích v řádech<br />
-        <span class="text-[#FFBA00]">stovek milionů korun</span>
+        Podílíme se na <br class="md:hidden" /> investicích
+        <br class="hidden md:block" />
+        v řádech <span class="text-[#FFBA00]">stovek milionů</span>
+        <br class="md:hidden" /> korun
     </h2>
 
     <p
-        class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+        class="z-10 mt-2 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        A proto jsem se rozhodl zůstat<br />
-        anonymní, abych mohl
-        <span class="text-[#FFBA00] font-bold">chránit<br />své soukromí</span>.
+        A proto jsem se rozhodl zůstat <br class="hidden md:block" /> anonymní,
+        <br class="md:hidden" /> abych mohl
+        <span class="text-[#FFBA00] font-bold"
+            >chránit <br class="md:hidden" /> své soukromí</span
+        >.
     </p>
 
     <img

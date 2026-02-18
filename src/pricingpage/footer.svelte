@@ -72,6 +72,12 @@
                     Zásady ochrany osobních údajů
                 </a>
                 <a
+                    href="/obchodni-podminky"
+                    class="text-white text-[16px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
+                >
+                    Všeobecné obchodní podmínky
+                </a>
+                <a
                     href="/nastaveni-cookies"
                     class="text-white text-[16px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
                 >

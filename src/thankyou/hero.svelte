@@ -62,7 +62,7 @@
 
     <div class="relative w-full flex flex-col items-center">
         <img
-            src="/assets/addpics/Group 65.png"
+            src="/assets/addpics/komunita.png"
             alt="Person"
             class="z-10 mt-10 w-[344px] md:w-[430px] h-auto rounded-[15px] mx-auto select-none pointer-events-none"
             draggable="false"

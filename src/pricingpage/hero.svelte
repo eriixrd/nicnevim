@@ -4,6 +4,8 @@
     import Tag from "../components/Tag.svelte";
     import Stars from "../components/Stars.svelte";
 
+    let { openModal = () => {} }: { openModal: () => void } = $props();
+
     interface Package {
         type: "monthly" | "annual";
         price: string;
@@ -225,20 +227,24 @@
         </Tag>
 
         <h1
-            class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 mt-2 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
-            Potvrďte členství,<br />
-            které <span class="text-[#FFBA00]">si chcete pořídit</span>
+            Sledujte <span class="text-[#FFBA00]">celé mé</span>
+            <br class="md:hidden" />
+            <span class="text-[#FFBA00]">portfolio</span> a všechny
+            <br class="hidden md:block" />
+            obchody živě <span class="text-[#FFBA00]">na</span>
+            <br class="md:hidden" />
+            <span class="text-[#FFBA00]">Discordu</span>
         </h1>
 
         <p
-            class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
-            Následně budete přesměřováni<br />
-            <span
-                class="bg-linear-to-br from-[#C9A44A] via-[#D3C295] to-[#C9A44A] bg-clip-text text-transparent font-bold inline-block"
-                >na platební bránu</span
-            >
+            Naučte se moji opční strategii <br class="md:hidden" />
+            přímo z praxe skrze reálné obchody,
+            <span class="hidden md:inline"><br /></span>
+            strukturu <br class="md:hidden" /> portfolia a detailní myšlenkové procesy.
         </p>
 
         <!-- Package Cards Container -->
@@ -280,6 +286,7 @@
                         </p>
 
                         <button
+                            onclick={openModal}
                             class="group relative mt-5 w-[85%] py-2 bg-[#FFC300] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
                         >
                             <span class="relative z-10">{pkg.buttonText}</span>
