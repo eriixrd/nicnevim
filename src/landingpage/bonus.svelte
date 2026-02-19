@@ -25,7 +25,7 @@
     </h1>
 
     <div
-        class="z-10 mt-12 relative flex flex-col items-center md:flex-row md:items-stretch justify-center gap-8 w-full px-4 max-w-[420px] md:max-w-[840px]"
+        class="z-10 mt-12 relative flex flex-col items-center md:flex-row md:items-stretch justify-center gap-8 w-full px-4 max-w-[420px] md:max-w-[910px]"
     >
         <!-- Bonus #1 -->
         <div class="relative w-full p-px rounded-[20px] bg-[#1C1D19]">

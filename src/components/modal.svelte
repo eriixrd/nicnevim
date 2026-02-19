@@ -23,7 +23,7 @@
 {#if isOpen}
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <div
-        class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-6"
         transition:fade={{ duration: 200 }}
         role="dialog"
         aria-modal="true"
@@ -36,7 +36,7 @@
 
         <!-- Modal Content -->
         <div
-            class="relative w-full max-w-[500px] bg-[#0A0A0A] rounded-[30px] border border-white/10 overflow-hidden shadow-2xl"
+            class="relative w-full max-w-[500px] max-h-[90vh] md:max-h-none bg-[#0A0A0A] rounded-[25px] md:rounded-[30px] border border-white/10 overflow-y-auto md:overflow-hidden shadow-2xl"
             transition:scale={{ duration: 300, start: 0.95, opacity: 0 }}
         >
             <!-- Background Glow -->
@@ -44,7 +44,7 @@
                 class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-[#6633EE]/10 blur-[80px] pointer-events-none"
             ></div>
 
-            <div class="relative z-10 p-8 md:p-10 flex flex-col items-center">
+            <div class="relative z-10 p-6 md:p-10 flex flex-col items-center">
                 <!-- Close Button -->
                 <button
                     onclick={close}
@@ -80,21 +80,26 @@
 
                 <!-- Heading -->
                 <h2
-                    class="text-white text-[36px] md:text-[40px] font-extrabold text-center leading-tight mb-2"
+                    class="text-white text-[28px] md:text-[40px] font-extrabold text-center leading-tight mb-2"
                 >
-                    Vyplňte údaje<br />
-                    <span class="text-[#FFBA00]">a rezervujte si své</span><br
-                    />
+                    Vyplňte údaje<br class="hidden md:block" />
+                    <span class="text-[#FFBA00]">a rezervujte si své</span>
+                    <br class="hidden md:block" />
                     <span class="text-[#FFBA00]">místo</span> v komunitě
                 </h2>
 
                 <!-- Subheading -->
                 <p
-                    class="text-white text-[20px] md:text-[24px] font-medium md:font-normal text-center leading-[150%] mb-8"
+                    class="text-white text-[18px] md:text-[24px] font-medium md:font-normal text-center leading-[150%] mb-6 md:mb-8"
                 >
-                    Během pár minut vám odešleme<br />
-                    další informace k dokončení<br />
-                    členství
+                    <span class="md:hidden"
+                        >Během pár minut vám odešleme další informace k
+                        dokončení členství</span
+                    >
+                    <span class="hidden md:inline"
+                        >Během pár minut vám odešleme<br />další informace k
+                        dokončení<br />členství</span
+                    >
                 </p>
 
                 <!-- Form -->
@@ -106,7 +111,7 @@
                             autocomplete="name"
                             bind:value={name}
                             placeholder="Vaše jméno"
-                            class="w-full bg-[#111] border border-white/10 rounded-[15px] px-6 py-4 text-white placeholder:text-white/60 outline-none focus:border-[#FFBA00]/50 transition-all text-[18px]"
+                            class="w-full bg-[#111] border border-white/10 rounded-[15px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/60 outline-none focus:border-[#FFBA00]/50 transition-all text-[16px] md:text-[18px]"
                         />
                     </div>
                     <div class="relative group">
@@ -116,14 +121,14 @@
                             autocomplete="email"
                             bind:value={email}
                             placeholder="Váš e-mail"
-                            class="w-full bg-[#111] border border-white/10 rounded-[15px] px-6 py-4 text-white placeholder:text-white/60 outline-none focus:border-[#FFBA00]/50 transition-all text-[18px]"
+                            class="w-full bg-[#111] border border-white/10 rounded-[15px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/60 outline-none focus:border-[#FFBA00]/50 transition-all text-[16px] md:text-[18px]"
                         />
                     </div>
                 </div>
 
                 <!-- Button -->
                 <button
-                    class="group relative w-full mt-4 py-4 bg-[#FFC300] text-black text-[20px] font-bold rounded-[15px] shadow-[0_0_25px_rgba(255,195,0,0.3)] cursor-pointer transition-all duration-200 hover:scale-[1.02] overflow-hidden"
+                    class="group relative w-full mt-2 md:mt-4 py-3.5 md:py-4 bg-[#FFC300] text-black text-[18px] md:text-[20px] font-bold rounded-[15px] shadow-[0_0_25px_rgba(255,195,0,0.3)] cursor-pointer transition-all duration-200 hover:scale-[1.02] overflow-hidden"
                 >
                     <span class="relative z-10">Pokračovat k platbě</span>
                     <div

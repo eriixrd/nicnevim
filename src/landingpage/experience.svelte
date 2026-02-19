@@ -53,7 +53,7 @@
     </p>
 
     <div
-        class="z-10 w-full max-w-[370px] md:max-w-[480px] h-auto border border-white/5 rounded-[20px] mt-8 flex flex-col items-center justify-start p-8 md:p-10"
+        class="z-10 w-full max-w-[370px] md:max-w-[480px] h-auto border border-white/20 rounded-[20px] mt-8 flex flex-col items-center justify-start p-8 md:p-10"
     >
         <img
             src="/assets/icons/info.svg"
@@ -106,7 +106,9 @@
                     {pillar.title}
                 </h3>
 
-                <p class="text-[18px] text-white font-medium leading-[150%]">
+                <p
+                    class="text-[16px] md:text-[17px] text-white font-medium leading-[150%]"
+                >
                     {@html pillar.desc}
                 </p>
             </div>

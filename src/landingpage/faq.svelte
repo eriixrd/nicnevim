@@ -7,33 +7,33 @@
     const faqs = [
         {
             question: "Pro koho je komunita vhodná?",
-            answer: "Komunita je určená pro investory, kteří<br class='md:hidden' /> chtějí využít opce jako doplněk pro své<br class='md:hidden' /> dlouhodobé akciové portfolio.<br /><br />Důraz je kladen na celý proces,<br class='md:hidden' /> rozhodování a práci s rizikem, ne na<br class='md:hidden' /> tipy nebo zaručené výsledky.",
+            answer: "Komunita je určená pro investory, kteří<br class='md:hidden' /> chtějí využít opce jako doplněk pro <br class='hidden md:block' /> své dlouhodobé akciové portfolio.<br /><br />Důraz je kladen na celý proces,<br class='md:hidden' /> rozhodování a práci s rizikem, ne na<br class='md:hidden' /> tipy <br class='hidden md:block' /> nebo zaručené výsledky.",
         },
         {
             question: "Využiju komunitu i když mám menší kapitál?",
-            answer: "Ano. Součástí komunity je samostatné<br class='md:hidden' /> mini-portfolio, kde ukazujeme, jak naši<br class='md:hidden' /> strategii využít i s menším kapitálem.<br /><br />Mini-portfolio začíná s částkou 200.000<br class='md:hidden' /> Kč a na reálných obchodech ukazujeme<br class='md:hidden' /> celý proces – od výběru titulu, přes<br class='md:hidden' /> řízení pozice, až po realiování zisků.",
+            answer: "Ano. Součástí komunity je samostatné<br class='md:hidden' /> mini-portfolio, kde ukazujeme, jak naši<br class='md:hidden' /> <br class='hidden md:block' /> strategii využít i s menším kapitálem.<br /><br />Mini-portfolio začíná s částkou 200.000<br class='md:hidden' /> Kč a na reálných obchodech ukazujeme<br class='md:hidden' /> <br class='hidden md:block' /> celý proces – od výběru titulu, přes<br class='md:hidden' /> řízení pozice, až po realiování zisků.",
         },
         {
             question: "Jak často sdílíte nové obchody?",
-            answer: "Sdílím kolem 200 obchodů za rok.<br class='md:hidden' /> V některých dnech jde o jeden obchod,<br class='md:hidden' /> ale někdy sdílím klidně i 3+ obchody<br class='md:hidden' /> za den.<br /><br />Mojí prioritou není kvantita, ale kvalita<br class='md:hidden' /> rozhodnutí.",
+            answer: "Sdílím kolem 200 obchodů za rok.<br class='md:hidden' /> V některých dnech jde o jeden obchod,<br class='md:hidden' /><br class='hidden md:block' /> ale někdy sdílím klidně i 3+ obchody<br class='md:hidden' /> za den.<br /><br />Mojí prioritou není kvantita, ale kvalita<br class='md:hidden' /> rozhodnutí.",
         },
         {
             question: "Mohu se ptát na konkrétní obchody nebo strategie?",
-            answer: "Ano, můžete se na cokoliv doptávat<br class='md:hidden' /> mě, mého týmu i ostatních investorů<br class='md:hidden' /> z komunity.<br /><br />Rádi vám vysvětlíme myšlenkový<br class='md:hidden' /> proces za jakýmkoliv obchodem.<br class='md:hidden' /> Nicméně na otázky typu “Mám koupit<br class='md:hidden' /> X” nebo “Vyplatí se teď Y”,<br class='md:hidden' /> neodpovídám.<br /><br />Nejde o finanční poradenství, ale o<br class='md:hidden' /> pochopení procesu, abyste ho zvládli<br class='md:hidden' /> sami aplikovat v praxi.",
+            answer: "Ano, můžete se na cokoliv doptávat<br class='md:hidden' /> mě, mého týmu i ostatních<br class='hidden md:block' />investorů<br class='md:hidden' /> z komunity.<br /><br />Rádi vám vysvětlíme myšlenkový<br class='md:hidden' /> proces za jakýmkoliv obchodem.<br class='md:hidden' /> <br class='hidden md:block' />Nicméně na otázky typu “Mám koupit<br class='md:hidden' /> X” nebo “Vyplatí se teď Y”,<br class='md:hidden' /> neodpovídám.<br /><br />Nejde o finanční poradenství, ale o<br class='md:hidden' /> pochopení procesu, abyste ho zvládli<br class='md:hidden' /> <br class='hidden md:block' />sami aplikovat v praxi.",
         },
         {
             question:
                 "Je komunita vhodná i<br class='md:hidden' /> pro dlouhodobé investory?",
-            answer: "Ano, opce jsou skvělý doplněk pro<br class='md:hidden' /> dlouhodobé investory.<br /><br />Poskytují nám větší kontrolu nad<br class='md:hidden' /> portfoliem, snižují volatilitu a<br class='md:hidden' /> dlouhodobě zvyšují výnos portfolia.",
+            answer: "Ano, opce jsou skvělý doplněk pro<br class='md:hidden' /> dlouhodobé investory.<br /><br />Poskytují nám větší kontrolu nad<br class='md:hidden' /> portfoliem, snižují volatilitu a<br class='md:hidden' /> <br class='hidden md:block' />dlouhodobě zvyšují výnos portfolia.",
         },
         {
             question:
                 "Potřebuji mít předchozí<br class='md:hidden' /> zkušenosti s opcemi?",
-            answer: "Ne, předchozí zkušenosti s opcemi<br class='md:hidden' /> nejsou nutné.<br /><br />Součástí komunity jsou praktické<br class='md:hidden' /> návody, díky kterým pochopíte, jak<br class='md:hidden' /> opce fungují v praxi a jak zapadají<br class='md:hidden' /> do správy portfolia.<br /><br />Nicméně stále platí, že komunita je<br class='md:hidden' /> postavená na aktivním přístupu a<br class='md:hidden' /> ochotě učit se – nejde o rychlý kurz<br class='md:hidden' /> ani hotová řešení.",
+            answer: "Ne, předchozí zkušenosti s opcemi<br class='md:hidden' /> nejsou nutné.<br /><br />Součástí komunity jsou praktické<br class='md:hidden' /> návody, díky kterým pochopíte, jak<br class='md:hidden' /> opce <br class='hidden md:block' />fungují v praxi a jak zapadají<br class='md:hidden' /> do správy portfolia.<br /><br />Nicméně stále platí, že komunita je<br class='md:hidden' /> postavená na aktivním přístupu a<br class='md:hidden' /> ochotě <br class='hidden md:block' />učit se – nejde o rychlý kurz<br class='md:hidden' /> ani hotová řešení.",
         },
         {
             question: "Přijímáte aktuálně nové členy?",
-            answer: "Zatím ano, ale komunitu už brzy<br class='md:hidden' /> uzavřeme, abychom zachovali kvalitu<br class='md:hidden' /> obsahu a osobní přístup ke všem<br class='md:hidden' /> členům uvnitř.",
+            answer: "Zatím ano, ale komunitu už brzy<br class='md:hidden' /> uzavřeme, abychom zachovali kvalitu<br class='md:hidden' /> <br class='hidden md:block' />obsahu a osobní přístup ke všem<br class='md:hidden' /> členům uvnitř.",
         },
     ];
 

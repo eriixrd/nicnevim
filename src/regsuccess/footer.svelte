@@ -67,13 +67,13 @@
                     href="https://www.nicnevim.online/op"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-white text-[16px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
+                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
                 >
                     Zásady ochrany osobních údajů
                 </a>
                 <a
                     href="/nastaveni-cookies"
-                    class="text-white text-[16px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
+                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
                 >
                     Nastavení cookies
                 </a>

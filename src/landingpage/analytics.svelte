@@ -91,45 +91,6 @@
             wasDragging = false;
         }, 100);
     }
-
-    let refContainer = $state<HTMLDivElement | null>(null);
-    let scrollThumbProgress = $state(0);
-    let isDraggingThumb = $state(false);
-
-    function handleRefScroll() {
-        if (!refContainer || isDraggingThumb) return;
-        const { scrollLeft, scrollWidth, clientWidth } = refContainer;
-        scrollThumbProgress = scrollLeft / (scrollWidth - clientWidth);
-    }
-
-    function handleThumbDrag(e: MouseEvent | TouchEvent) {
-        if (!isDraggingThumb || !refContainer) return;
-        const track = document.getElementById("ref-track");
-        if (!track) return;
-
-        const rect = track.getBoundingClientRect();
-        const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-        let progress = (clientX - rect.left) / rect.width;
-        progress = Math.max(0, Math.min(1, progress));
-
-        scrollThumbProgress = progress;
-        const { scrollWidth, clientWidth } = refContainer;
-        refContainer.scrollLeft = progress * (scrollWidth - clientWidth);
-    }
-
-    function startThumbDrag(e: MouseEvent | TouchEvent) {
-        isDraggingThumb = true;
-        if (!("touches" in e)) {
-            window.addEventListener("mousemove", handleThumbDrag);
-            window.addEventListener("mouseup", stopThumbDrag);
-        }
-    }
-
-    function stopThumbDrag() {
-        isDraggingThumb = false;
-        window.removeEventListener("mousemove", handleThumbDrag);
-        window.removeEventListener("mouseup", stopThumbDrag);
-    }
 </script>
 
 <section
@@ -274,7 +235,7 @@
         </div>
 
         <p
-            class="z-10 -mt-2 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 -mt-2 max-w-[950px] px-4 text-center text-[18px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             <span class="md:hidden">
                 Naším cílem je, vám každý den <br />
@@ -338,14 +299,14 @@
         ></div>
 
         <h2
-            class="z-10 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 max-w-[950px] px-4 text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             <span class="md:hidden">
                 Právě tato <br />
                 kombinace zajišťuje <br />
                 kvalitu obsahu a <br />
-                <span class="text-[#FFBA00]">spokojenost</span> <br />
-                <span class="text-[#FFBA00]">investorů</span> v komunitě
+                <span class="text-[#FFBA00]">spokojenost</span>
+                <span class="text-[#FFBA00]">investorů</span><br /> v komunitě
             </span>
             <span class="hidden md:inline">
                 Právě tato kombinace <br />
@@ -357,55 +318,25 @@
         </h2>
     </div>
 
-    <!-- Reference Images with Safari-style Scrollbar on Mobile -->
-    <div class="z-10 mt-4 w-full flex flex-col items-center overflow-hidden">
-        <div
-            bind:this={refContainer}
-            onscroll={handleRefScroll}
-            class="flex md:flex-col items-start md:items-center gap-4 md:gap-5 w-full px-5 md:px-4 overflow-x-auto md:overflow-x-visible no-scrollbar snap-x snap-mandatory"
-        >
-            <img
-                src="/assets/addpics/reference 1 1.png"
-                alt="Reference 1"
-                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
-            />
-            <img
-                src="/assets/addpics/Reference 2 1.png"
-                alt="Reference 2"
-                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
-            />
-            <img
-                src="/assets/addpics/Reference 3 1.png"
-                alt="Reference 3"
-                class="w-[85vw] md:w-full md:max-w-[440px] shrink-0 snap-center rounded-[10px]"
-            />
-        </div>
-
-        <!-- Safari-style Scrollbar (Mobile only) -->
-        <div class="md:hidden w-full px-4 mt-8 mb-4 flex justify-center">
-            <div
-                id="ref-track"
-                class="relative w-full max-w-[120px] h-[14px] bg-white/10 rounded-full p-[3px] cursor-pointer"
-                onmousedown={startThumbDrag}
-                ontouchstart={startThumbDrag}
-                ontouchmove={handleThumbDrag}
-                ontouchend={stopThumbDrag}
-                role="slider"
-                tabindex="0"
-                aria-label="Scroll balance gallery"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-valuenow={Math.round(scrollThumbProgress * 100)}
-            >
-                <div
-                    class="h-full bg-[#999999] rounded-full"
-                    style="width: 40%; margin-left: {scrollThumbProgress *
-                        60}%; transition: {isDraggingThumb
-                        ? 'none'
-                        : 'margin-left 0.1s ease-out'};"
-                ></div>
-            </div>
-        </div>
+    <!-- Reference Images Vertical Stack -->
+    <div
+        class="z-10 mt-4 w-full flex flex-col items-center gap-4 md:gap-5 px-5 md:px-4"
+    >
+        <img
+            src="/assets/addpics/reference 1 1.png"
+            alt="Reference 1"
+            class="w-full max-w-[440px] rounded-[10px]"
+        />
+        <img
+            src="/assets/addpics/Reference 2 1.png"
+            alt="Reference 2"
+            class="w-full max-w-[440px] rounded-[10px]"
+        />
+        <img
+            src="/assets/addpics/Reference 3 1.png"
+            alt="Reference 3"
+            class="w-full max-w-[440px] rounded-[10px]"
+        />
     </div>
 
     <button

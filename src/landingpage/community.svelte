@@ -140,10 +140,10 @@
                                 <img
                                     src="/assets/icons/Checkmark.png"
                                     alt="Check"
-                                    class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
+                                    class="shrink-0 w-[15px] h-[15px] mt-[3px] md:mt-[5.5px]"
                                 />
                                 <span
-                                    class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                                    class="text-[15px] md:text-[16px] text-white/90 font-medium leading-[1.5]"
                                 >
                                     {@html feature}
                                 </span>

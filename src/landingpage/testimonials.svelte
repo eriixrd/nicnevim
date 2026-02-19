@@ -237,7 +237,7 @@
                             {#each group as itemNumber}
                                 <!-- Image -->
                                 <div
-                                    class="w-full h-[200px] md:h-[250px] py-2 md:px-6.5 md:py-2.5 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                    class="w-full h-[200px] md:h-[250px] py-2 px-4 md:px-6.5 md:py-2.5 overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
                                 >
                                     <img
                                         src="/assets/testimonials/Group {itemNumber}.png"

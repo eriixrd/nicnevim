@@ -6,7 +6,7 @@
     class="relative flex flex-col items-center justify-center w-full py-20 overflow-hidden"
 >
     <Tag className="mx-auto mt-2.5">
-        <span class="text-[18px]">💎</span>
+        <span class="text-[18px] -mx-[5px]">💎</span>
         <span class="text-[16px] text-white font-medium leading-none ml-1">
             Teď je řada na vás
         </span>
@@ -17,8 +17,8 @@
     >
         <span class="md:hidden">
             Naučte se moji <br />
-            opční strategii <br />
-            <span class="text-[#FFBA00]">přímo z praxe</span>
+            opční strategii <span class="text-[#FFBA00]">přímo</span><br />
+            <span class="text-[#FFBA00]">z praxe</span>
         </span>
         <span class="hidden md:inline">
             Naučte se moji opční <br />
@@ -30,9 +30,9 @@
         class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
         <span class="md:hidden">
-            Skrze reálné obchody, <br />
-            strukturu portfolia a <br />
-            detailní myšlenkové procesy
+            Skrze reálné obchody, strukturu<br />
+            portfolia a detailní myšlenkové<br />
+            procesy
         </span>
         <span class="hidden md:inline">
             Skrze reálné obchody, strukturu portfolia <br />

@@ -107,7 +107,7 @@
 
         <!-- Empty Rectangle with Stroke -->
         <div
-            class="w-full max-w-[370px] md:max-w-[480px] h-auto border border-white/5 rounded-[20px] mt-10 flex flex-col items-center justify-start p-8 md:p-10"
+            class="w-full max-w-[370px] md:max-w-[480px] h-auto border border-white/20 rounded-[20px] mt-10 flex flex-col items-center justify-start p-8 md:p-10"
         >
             <img
                 src="/assets/icons/info.svg"
@@ -115,7 +115,7 @@
                 class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"
             />
             <p
-                class="text-white text-[20px] md:text-[22px] font-normal leading-[1.4] mt-4"
+                class="text-white text-[18px] md:text-[22px] font-normal leading-[1.4] mt-4"
             >
                 Role vám bude automaticky<br />
                 přiřazena do 5 minut

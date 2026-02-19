@@ -50,7 +50,7 @@
             buttonText: "Pořídit roční členství",
             icon: "/assets/icons/Gold.png",
             tagSymbol: "💰",
-            tagText: "Ušetříte 18%",
+            tagText: "2 měsíce zdarma",
             accentColor: "rgba(255, 186, 0, 0.12)",
             shadowClass: "shadow-yellow-glow",
             gradientBorder: "from-[#FFBA00]/50 via-transparent to-[#FFBA00]/50",
@@ -239,7 +239,7 @@
         </h1>
 
         <p
-            class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[16px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
             Naučte se moji opční strategii <br class="md:hidden" />
             přímo z praxe skrze reálné obchody,
@@ -375,7 +375,7 @@
                         >
                             {#each group as itemNumber}
                                 <div
-                                    class="w-full h-[200px] md:h-[250px] py-2 md:px-6.5 md:py-2.5 overflow-hidden bg-linear-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
+                                    class="w-full h-[200px] md:h-[250px] py-2 px-4 md:px-6.5 md:py-2.5 overflow-hidden bg-linear-to-b from-[#0A0A0A] to-[#000000] flex items-center justify-center"
                                 >
                                     <img
                                         src="/assets/testimonials/Group {itemNumber}.png"
