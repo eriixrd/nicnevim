@@ -39,13 +39,17 @@
     <p
         class="z-10 mt-3 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Přes 10 let profesionálního <br class="hidden md:block" />
-        pokeru mě naučilo pracovat s <br class="md:hidden" /> rizikem,
-        <br class="hidden md:block" />
-        <span class="md:hidden">pravděpodobností</span>
-        <br class="md:hidden" />
-        <span class="md:hidden">a emocemi.</span>
-        <span class="hidden md:inline">pravděpodobností a emocemi.</span>
+        <span class="md:hidden">
+            Přes 10 let profesionálního <br />
+            pokeru mě naučilo pracovat s <br />
+            rizikem, pravděpodobností <br />
+            a emocemi.
+        </span>
+        <span class="hidden md:inline">
+            Přes 10 let profesionálního <br />
+            pokeru mě naučilo pracovat s rizikem, <br />
+            pravděpodobností a emocemi.
+        </span>
     </p>
 
     <div
@@ -78,9 +82,9 @@
     >
         Z těchto zkušeností <br />
         vycházejí <span class="text-[#FFBA00]">3 pilíře</span>,
-        <br class="md:hidden" />
-        kterými <br class="hidden md:block" />
-        se řídím
+        <span class="hidden md:inline">kterými</span>
+        <br />
+        <span class="md:hidden">kterými </span>se řídím
     </h2>
 
     <div
@@ -102,9 +106,7 @@
                     {pillar.title}
                 </h3>
 
-                <p
-                    class="text-[18px] text-white font-medium leading-[150%] whitespace-nowrap"
-                >
+                <p class="text-[18px] text-white font-medium leading-[150%]">
                     {@html pillar.desc}
                 </p>
             </div>
@@ -129,20 +131,34 @@
     <h2
         class="z-10 mt-16 max-w-[950px] px-4 text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Podílíme se na <br class="md:hidden" /> investicích
-        <br class="hidden md:block" />
-        v řádech <span class="text-[#FFBA00]">stovek milionů</span>
-        <br class="md:hidden" /> korun
+        Podílíme se na <span class="hidden md:inline">investicích</span>
+        <br />
+        <span class="md:hidden">investicích v řádech</span>
+        <span class="hidden md:inline"
+            >v řádech <span class="text-[#FFBA00]">stovek milionů</span></span
+        >
+        <br />
+        <span class="text-[#FFBA00] md:hidden">stovek milionů</span>
+        <span class="md:hidden"> korun</span>
+        <span class="hidden md:inline text-white">korun</span>
     </h2>
 
     <p
         class="z-10 mt-2 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        A proto jsem se rozhodl zůstat <br class="hidden md:block" /> anonymní,
-        <br class="md:hidden" /> abych mohl
-        <span class="text-[#FFBA00] font-bold"
-            >chránit <br class="md:hidden" /> své soukromí</span
-        >.
+        A proto jsem se rozhodl zůstat <span class="hidden md:inline"
+            >anonymní,</span
+        >
+        <br />
+        <span class="md:hidden">anonymní, abych mohl </span>
+        <span class="hidden md:inline"
+            >abych mohl <span class="text-[#FFBA00] font-bold"
+                >chránit své soukromí.</span
+            ></span
+        >
+        <span class="text-[#FFBA00] font-bold md:hidden">chránit</span>
+        <br class="md:hidden" />
+        <span class="text-[#FFBA00] font-bold md:hidden">své soukromí.</span>
     </p>
 
     <img

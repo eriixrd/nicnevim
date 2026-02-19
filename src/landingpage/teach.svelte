@@ -15,17 +15,29 @@
     <h2
         class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Naučte se moji<br />
-        opční strategii
-        <span class="text-[#FFBA00]">přímo<br />z praxe</span>
+        <span class="md:hidden">
+            Naučte se moji <br />
+            opční strategii <br />
+            <span class="text-[#FFBA00]">přímo z praxe</span>
+        </span>
+        <span class="hidden md:inline">
+            Naučte se moji opční <br />
+            strategii <span class="text-[#FFBA00]">přímo z praxe</span>
+        </span>
     </h2>
 
     <p
         class="z-10 mt-2 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Skrze reálné obchody, strukturu<br />
-        portfolia a detailní myšlenkové<br />
-        procesy
+        <span class="md:hidden">
+            Skrze reálné obchody, <br />
+            strukturu portfolia a <br />
+            detailní myšlenkové procesy
+        </span>
+        <span class="hidden md:inline">
+            Skrze reálné obchody, strukturu portfolia <br />
+            a detailní myšlenkové procesy
+        </span>
     </p>
 
     <div

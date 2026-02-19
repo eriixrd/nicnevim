@@ -33,20 +33,27 @@
         </Tag>
 
         <h1
-            class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 mt-2 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
-            Sledujte <span class="text-[#FFBA00]">celé mé<br />portfolio</span>
-            a všechny<br />obchody živě
-            <span class="text-[#FFBA00]">na <br />Discordu</span>
+            Sledujte <span class="text-[#FFBA00]"
+                >celé mé <br class="md:hidden" /> portfolio</span
+            >
+            <br class="hidden md:block" />
+            a všechny <br class="md:hidden" />
+            obchody živě
+            <br class="hidden md:block" />
+            <span class="text-[#FFBA00]"
+                >na <br class="md:hidden" /> Discordu</span
+            >
         </h1>
 
         <p
-            class="z-10 mt-2.5 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
-            Naučte se moji opční strategii<br />
-            přímo z praxe skrze reálné obchody,<br />
-            strukturu portfolia a detailní<br />
-            myšlenkové procesy.
+            Naučte se moji opční strategii <br />
+            přímo z praxe skrze reálné obchody, <br class="md:hidden" />
+            strukturu <br class="hidden md:block" />
+            portfolia a detailní <br class="md:hidden" /> myšlenkové procesy.
         </p>
 
         <div class="relative z-10 mx-auto mt-4 px-4 w-full md:max-w-[880px]">

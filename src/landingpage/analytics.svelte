@@ -21,27 +21,6 @@
     let wasDragging = $state(false);
     let dragDistance = $state(0);
     const dragThreshold = 50;
-    let wheelTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    function handleWheel(e: WheelEvent) {
-        // Handle both horizontal trackpad swipes and vertical wheel scrolls (if intentional)
-        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-        const delta = isHorizontal ? e.deltaX : e.deltaY;
-
-        if (Math.abs(delta) > 20) {
-            if (wheelTimeout) return;
-
-            if (delta > 0) next();
-            else prev();
-
-            wheelTimeout = setTimeout(() => {
-                wheelTimeout = null;
-            }, 400); // 400ms debounce matches the transition feel
-
-            // Prevent page scroll when interacting with the slider
-            if (e.cancelable) e.preventDefault();
-        }
-    }
 
     onMount(() => {
         const checkScreen = () => (isDesktop = window.innerWidth >= 768);
@@ -151,23 +130,6 @@
         window.removeEventListener("mousemove", handleThumbDrag);
         window.removeEventListener("mouseup", stopThumbDrag);
     }
-
-    function handleRefWheel(e: WheelEvent) {
-        if (!refContainer || isDesktop) return;
-        // Map vertical scroll to horizontal when in mobile/horizontal mode
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            refContainer.scrollLeft += e.deltaY;
-            // Only prevent default if we're actually scrolling the container
-            const atStart = refContainer.scrollLeft <= 0 && e.deltaY < 0;
-            const atEnd =
-                refContainer.scrollLeft >=
-                    refContainer.scrollWidth - refContainer.clientWidth &&
-                e.deltaY > 0;
-            if (!atStart && !atEnd) {
-                if (e.cancelable) e.preventDefault();
-            }
-        }
-    }
 </script>
 
 <section
@@ -180,15 +142,23 @@
         >
     </Tag>
 
-    <h2
-        class="z-10 mt-2 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+    <h1
+        class="z-10 mt-2 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Poznejte můj tým<br />
-        <span class="text-[#FFBA00]"
-            >profesionálních <br class="md:hidden" /> analytiků</span
-        >, <br class="hidden md:block" /> kteří pro <br class="md:hidden" />
-        vás tvoří obsah<br class="md:hidden" /> společně se mnou
-    </h2>
+        <span class="md:hidden">
+            Poznejte můj tým <br />
+            <span class="text-[#FFBA00]">profesionálních</span> <br />
+            <span class="text-[#FFBA00]">analytiků</span>, kteří pro <br />
+            vás tvoří obsah společně se mnou
+        </span>
+        <span class="hidden md:inline">
+            Poznejte můj tým <br />
+            <span class="text-[#FFBA00]">profesionálních analytiků</span>,
+            <br />
+            kteří pro vás tvoří obsah <br />
+            společně se mnou
+        </span>
+    </h1>
 
     <div class="relative w-full -mt-4 md:-mt-6 flex flex-col items-center">
         <!-- Slider Container -->
@@ -198,7 +168,6 @@
             role="region"
             aria-label="Team members slider"
             onmousedown={handleDragStart}
-            onwheel={handleWheel}
             ontouchstart={handleDragStart}
             ontouchmove={handleDragMove}
             ontouchend={handleDragEnd}
@@ -307,17 +276,29 @@
         <p
             class="z-10 -mt-2 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
         >
-            Naším cílem je, vám každý den <br class="md:hidden" />
-            <span class="hidden md:inline">přinášet profesionální</span>
-            <br class="md:hidden" />
-            <span class="md:hidden">přinášet profesionální</span> pohled na
-            <br class="hidden md:block" />
-            akciové trhy a
-            <span class="text-[#FFBA00] font-bold"
-                >dělat dlouhodobě lepší <br class="md:hidden" />
-                investiční rozhodnutí</span
-            >
-            než zbytek <br class="md:hidden" /> trhu.
+            <span class="md:hidden">
+                Naším cílem je, vám každý den <br />
+                přinášet profesionální pohled na <br />
+                akciové trhy a
+                <span class="text-[#FFBA00] font-bold"
+                    >dělat dlouhodobě lepší</span
+                > <br />
+                <span class="text-[#FFBA00] font-bold"
+                    >investiční rozhodnutí</span
+                >
+                než zbytek <br />
+                trhu.
+            </span>
+            <span class="hidden md:inline">
+                Naším cílem je, vám každý den přinášet profesionální <br />
+                pohled na akciové trhy a
+                <span class="text-[#FFBA00] font-bold"
+                    >dělat dlouhodobě lepší</span
+                > <br />
+                <span class="text-[#FFBA00] font-bold"
+                    >investiční rozhodnutí</span
+                > než zbytek trhu.
+            </span>
         </p>
 
         <!-- Feature Cards -->
@@ -359,24 +340,20 @@
         <h2
             class="z-10 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
         >
-            Právě tato <br class="md:hidden" />
-            <span class="hidden md:inline">kombinace zajišťuje</span>
-            <br class="md:hidden" />
-            <span class="md:hidden">kombinace zajišťuje</span>
-            <br class="hidden md:block" />
-            kvalitu obsahu <br class="md:hidden" /> a
-            <br class="hidden md:block" />
-            <span class="hidden md:inline"
-                ><span class="text-[#FFBA00] font-bold"
-                    >a spokojenost investorů</span
-                >
-                <br /> v komunitě</span
-            >
-            <span class="md:hidden"
-                ><span class="text-[#FFBA00] font-bold"
-                    >spokojenost <br /> investorů v komunitě</span
-                ></span
-            >
+            <span class="md:hidden">
+                Právě tato <br />
+                kombinace zajišťuje <br />
+                kvalitu obsahu a <br />
+                <span class="text-[#FFBA00]">spokojenost</span> <br />
+                <span class="text-[#FFBA00]">investorů</span> v komunitě
+            </span>
+            <span class="hidden md:inline">
+                Právě tato kombinace <br />
+                zajišťuje kvalitu obsahu <br />a
+                <span class="text-[#FFBA00]"> spokojenost investorů</span>
+                <br />
+                v komunitě
+            </span>
         </h2>
     </div>
 
@@ -385,7 +362,6 @@
         <div
             bind:this={refContainer}
             onscroll={handleRefScroll}
-            onwheel={handleRefWheel}
             class="flex md:flex-col items-start md:items-center gap-4 md:gap-5 w-full px-5 md:px-4 overflow-x-auto md:overflow-x-visible no-scrollbar snap-x snap-mandatory"
         >
             <img

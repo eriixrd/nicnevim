@@ -243,28 +243,35 @@
     <h2
         class="z-10 mt-2 px-4 max-w-[950px] text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Takto komunitu <br class="md:hidden" />
-        <span class="md:text-white text-[#FFBA00]">hodnotí</span>
-        <span class="hidden md:inline">ostatní</span> <br class="md:hidden" />
-        <span class="md:hidden">ostatní</span> investoři
+        <span class="md:hidden">
+            Takto <span class="text-[#FFBA00]">komunitu</span> <br />
+            <span class="text-[#FFBA00]">hodnotí</span> ostatní <br />
+            investoři
+        </span>
+        <span class="hidden md:inline">
+            Takto <span class="text-[#FFBA00]">komunitu hodnotí</span> <br />
+            ostatní investoři
+        </span>
     </h2>
 
     <!-- Subheading/Description -->
     <p
         class="z-10 mt-2.5 px-4 max-w-[900px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Důvěřuje nám už více než 450 <br class="md:hidden" />
-        investorů,
-        <span class="hidden md:inline"
-            >kteří se s námi učí, jak opce efektivně využít</span
-        >
-        <br class="md:hidden" />
-        <span class="md:hidden">kteří se s námi učí, jak</span>
-        <br class="md:hidden" />
-        <span class="md:hidden">opce efektivně využít</span>
-        <span class="text-[#FFBA00] font-bold"
-            >jako doplněk <br class="md:hidden" /> svého portfolia.</span
-        >
+        <span class="md:hidden">
+            Důvěřuje nám už více než 450 <br />
+            investorů, kteří se s námi učí, jak <br />
+            opce efektivně využít
+            <span class="text-[#FFBA00] font-bold">jako doplněk</span> <br />
+            <span class="text-[#FFBA00] font-bold">svého portfolia.</span>
+        </span>
+        <span class="hidden md:inline">
+            Důvěřuje nám už více než 450 investorů, <br />
+            kteří se s námi učí, jak opce efektivně využít <br />
+            <span class="text-[#FFBA00] font-bold"
+                >jako doplněk svého portfolia.</span
+            >
+        </span>
     </p>
 
     <!-- FlyonUI Carousel Structure -->

@@ -63,28 +63,36 @@
     <h1
         class="z-10 mt-2 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
     >
-        Cílem <span class="text-[#FFBA00]">mojí strategie</span> <br />
-        je dlouhodobé <br class="md:hidden" />
-        <span class="hidden md:inline">zhodnocení</span>
-        <span class="md:hidden">zhodnocení v řádu</span>
-        <br class="hidden md:block" />
-        <span class="hidden md:inline">v řádu</span>
-        <span class="text-[#FFBA00]">20-30% p.a.</span>
+        <span class="md:hidden">
+            Cílem <span class="text-[#FFBA00]">mojí strategie</span> <br />
+            je dlouhodobé zhodnocení <br />
+            v řádu <span class="text-[#FFBA00]">20-30%</span>p.a.
+        </span>
+        <span class="hidden md:inline">
+            Cílem <span class="text-[#FFBA00]">mojí strategie</span> <br />
+            je dlouhodobé zhodnocení <br />
+            v řádu <span class="text-[#FFBA00]">20-30%</span>p.a.
+        </span>
     </h1>
 
     <p
         class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Provádím
-        <span class="text-[#FFBA00] font-bold"
-            >vyšší stovky obchodů <br class="md:hidden" /> ročně</span
-        >
-        <span class="hidden md:inline"
-            >a opce využívám k efektivní práci s akciovým <br /> portfoliem.</span
-        >
-        <span class="md:hidden"
-            >a opce využívám k efektivní <br /> práci s akciovým portfoliem.</span
-        >
+        <span class="md:hidden">
+            Provádím <span class="text-[#FFBA00] font-bold"
+                >vyšší stovky obchodů</span
+            > <br />
+            <span class="text-[#FFBA00] font-bold">ročně</span> a opce využívám
+            k <br />
+            efektivní práci s akciovým portfoliem.
+        </span>
+        <span class="hidden md:inline">
+            Provádím <span class="text-[#FFBA00] font-bold"
+                >vyšší stovky obchodů ročně</span
+            > <br />
+            a opce využívám k efektivní práci s akciovým <br />
+            portfoliem.
+        </span>
     </p>
 
     <div class="flex flex-col gap-4 mt-6 items-center w-full">
@@ -165,16 +173,20 @@
     <p
         class="z-10 mt-8 px-4 max-w-[950px] text-center text-[20px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
     >
-        Výsledky z minulých let ukazují, <span class="hidden md:inline">že</span
-        >
-        <br />
-        <span class="md:hidden">že </span><span class="text-[#FFBA00] font-bold"
-            >tato strategie funguje</span
-        >, nicméně <span class="hidden md:inline">i přes to</span> <br />
-        <span class="md:hidden">i přes to </span>dosažení mého cíle
-        <span class="hidden md:inline">nelze garantovat.</span>
-        <br class="md:hidden" />
-        <span class="md:hidden">nelze garantovat.</span>
+        <span class="md:hidden">
+            Výsledky z minulých let ukazují, <br />
+            že
+            <span class="text-[#FFBA00] font-bold">tato strategie funguje</span
+            >, nicméně <br />
+            i přes to dosažení mého cíle <br />
+            nelze garantovat.
+        </span>
+        <span class="hidden md:inline">
+            Výsledky z minulých let ukazují, že <br />
+            <span class="text-[#FFBA00] font-bold">tato strategie funguje</span
+            >, nicméně i přes to <br />
+            dosažení mého cíle nelze garantovat.
+        </span>
     </p>
 
     <!-- Graph Section -->
