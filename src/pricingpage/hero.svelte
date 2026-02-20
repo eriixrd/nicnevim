@@ -227,24 +227,17 @@
         </Tag>
 
         <h1
-            class="z-10 mt-2 max-w-[950px] px-4 text-center text-[36px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 mt-5 max-w-[950px] px-4 text-center text-[33px] md:text-[40px] text-white font-extrabold leading-[1.1]"
         >
-            Sledujte <span class="text-[#FFBA00]">celé mé</span>
-            <br class="md:hidden" />
-            <span class="text-[#FFBA00]">portfolio</span> a všechny
-            <br class="hidden md:block" />
-            obchody živě <span class="text-[#FFBA00]">na</span>
-            <br class="md:hidden" />
-            <span class="text-[#FFBA00]">Discordu</span>
+            Potvrďte členství,<br />
+            které <span class="text-[#FFBA00]">si chcete pořídit</span>
         </h1>
 
         <p
-            class="z-10 mt-2.5 max-w-[950px] px-4 text-center text-[16px] md:text-[24px] text-white font-medium md:font-normal leading-[150%]"
+            class="z-10 mt-3 max-w-[950px] px-4 text-center text-[20px] md:text-[24px] text-white font-semibold md:font-medium leading-[1.3]"
         >
-            Naučte se moji opční strategii <br class="md:hidden" />
-            přímo z praxe skrze reálné obchody,
-            <span class="hidden md:inline"><br /></span>
-            strukturu <br class="md:hidden" /> portfolia a detailní myšlenkové procesy.
+            Následně budete přesměrováni<br />
+            <span class="gold-gradient-text">na platební bránu</span>
         </p>
 
         <!-- Package Cards Container -->
@@ -478,5 +471,13 @@
     .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
+    }
+    .gold-gradient-text {
+        background: linear-gradient(to bottom, #d3c295, #c9a44a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        display: inline-block;
     }
 </style>
