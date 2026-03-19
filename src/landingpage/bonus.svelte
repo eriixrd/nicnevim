@@ -83,7 +83,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Stanete se součástí komunity více než 450 investorů,
                             kde máte prostor pro diskuzi, otázky a sdílení
@@ -97,7 +97,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Zároveň se můžete na cokoliv doptávat mě i mého
                             týmu.
@@ -166,7 +166,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Ke každé firmě z watchlistu získáte přístup k
                             valuacím, fundamentálním datům a výhledům z
@@ -180,7 +180,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Cílem je poskytnout vám kvalitní a aktuální data,
                             abyste mohli dělat správná rozhodnutí.
@@ -248,7 +248,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Získáte přístup k deníkům našich
                             analytiků, ve kterých sdílí své aktuální
@@ -262,7 +262,7 @@
                             class="shrink-0 w-[15px] h-[15px] mt-[5.5px]"
                         />
                         <span
-                            class="text-[16px] text-white/90 font-medium leading-[1.5]"
+                            class="text-[16px] text-white/90 font-medium leading-normal"
                         >
                             Díky tomu můžete sledovat myšlenkový
                             proces analytiků se zaměřením na
