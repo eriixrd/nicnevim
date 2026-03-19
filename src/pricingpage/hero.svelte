@@ -346,6 +346,7 @@
 
         <!-- Testimonials Carousel -->
         <div class="relative w-full mt-2 z-10 group px-0">
+            <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
             <div
                 bind:this={scrollContainer}
                 class="carousel flex overflow-x-auto no-scrollbar py-4"

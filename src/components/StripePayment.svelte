@@ -514,6 +514,8 @@
 
         <!-- Mobile Details Overlay -->
         {#if showDetails}
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
             <div
                 transition:fade={{ duration: 200 }}
                 class="fixed inset-0 top-[57px] bg-black/80 backdrop-blur-sm z-[-1]"
@@ -763,9 +765,10 @@
         <div class="max-w-[540px] mx-auto w-full flex flex-col gap-10">
             <!-- Contact Info -->
             <div class="flex flex-col gap-4">
-                <label class="text-[#30313d] text-sm font-bold">E-mail</label>
+                <label for="email-input" class="text-[#30313d] text-sm font-bold">E-mail</label>
                 <div class="relative group">
                     <input
+                        id="email-input"
                         type="email"
                         bind:value={email}
                         placeholder="email@priklad.cz"
@@ -776,7 +779,7 @@
 
             <!-- Payment Details -->
             <div class="flex flex-col gap-4">
-                <label class="text-[#30313d] text-sm font-bold"
+                <label for="fullName-input" class="text-[#30313d] text-sm font-bold"
                     >Platební údaje</label
                 >
                 <div
@@ -795,6 +798,7 @@
                     </div>
                 </div>
                 <input
+                    id="fullName-input"
                     bind:value={fullName}
                     placeholder="Jméno na kartě"
                     class="w-full p-3 bg-white border border-gray-200 rounded-md outline-none focus:border-[#008cdd] transition-all text-[15px] font-medium placeholder:text-gray-300"
@@ -803,7 +807,7 @@
 
             <!-- Billing Address -->
             <div class="flex flex-col gap-4">
-                <label class="text-[#30313d] text-sm font-bold"
+                <label for="addressLine1-input" class="text-[#30313d] text-sm font-bold"
                     >Fakturační adresa</label
                 >
                 <div
@@ -829,6 +833,8 @@
 
                         {#if isCountryDropdownOpen}
                             <!-- Backdrop pro zavření kliknutím mimo -->
+                            <!-- svelte-ignore a11y_click_events_have_key_events -->
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
                             <div class="fixed inset-0 z-[190] bg-transparent" onclick={() => isCountryDropdownOpen = false}></div>
                             <!-- Samotný dropdown -->
                             <div class="absolute top-full left-0 right-0 max-h-[250px] overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-[200] mt-1 py-1">
@@ -850,6 +856,7 @@
                     </div>
                     <div class="border-b border-gray-200">
                         <input
+                            id="addressLine1-input"
                             bind:value={addressLine1}
                             placeholder="Adresa (ulice a č.p.)"
                             class="w-full p-3 bg-white outline-none text-[15px] font-medium placeholder:text-gray-300"
