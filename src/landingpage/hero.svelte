@@ -3,6 +3,10 @@
     import Stars from "../components/Stars.svelte";
 </script>
 
+<svelte:head>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</svelte:head>
+
 <section>
     <div
         class="absolute top-0 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 bg-[#FFBA00]/50 blur-[70px] pointer-events-none"
@@ -66,12 +70,12 @@
                 style="box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); -webkit-box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); will-change: transform; transform: translate3d(0, 0, 0);"
             >
                 <iframe
-                    class="relative w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0"
-                    title="YouTube video player"
+                    src="https://player.vimeo.com/video/1174355198?h=c858363e39&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    class="absolute top-0 left-0 w-full h-full"
+                    title="NicNevim VSL Landing Page Komunita"
                 ></iframe>
             </div>
         </div>
