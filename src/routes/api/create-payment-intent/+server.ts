@@ -4,10 +4,11 @@ const STRIPE_SECRET_KEY = env.STRIPE_SECRET_KEY;
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-const stripe = new Stripe(STRIPE_SECRET_KEY);
+
 
 export const POST: RequestHandler = async ({ request }) => {
     try {
+        const stripe = new Stripe(env.STRIPE_SECRET_KEY || 'sk_test_placeholder');
         const { plan } = await request.json();
 
         // Define amounts in smallest currency unit (cents/haléře)
