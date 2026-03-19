@@ -1,9 +1,10 @@
 // Globální typová deklarace pro Google Analytics (gtag)
-export {};
+export { };
 
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
+    openCookieSettings?: () => void;
   }
 }
 

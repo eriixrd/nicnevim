@@ -37,7 +37,7 @@
         },
         {
             image: "/assets/addpics/Group 61.png",
-            title: '<span class="text-[#FFBA00] font-bold">Watchlist ~50 zajímavých</span><br /><span class="text-[#FFBA00] font-bold">firem</span> a ceny, na kterých<br />plánujeme obchodovat',
+            title: '<span class="text-[#FFBA00] font-bold">Watchlist zajímavých</span><br /><span class="text-[#FFBA00] font-bold">firem</span> a ceny, na kterých<br />plánujeme obchodovat',
             features: [
                 "Získáte přístup k aktualizovanému<br />seznamu firem, které dlouhodobě<br />sledujeme a plánujeme vypsat opce.<br />Zároveň u nich uvádíme výpočet<br />vnitřní hodnoty.",
                 "Watchlist nám pomáhá udržet si přehled<br />o potenciálních příležitostech na trhu.",

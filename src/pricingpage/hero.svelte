@@ -1,10 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { goto } from "$app/navigation";
     import AppleEmoji from "../components/AppleEmoji.svelte";
     import Tag from "../components/Tag.svelte";
     import Stars from "../components/Stars.svelte";
 
-    let { openModal = () => {} }: { openModal: () => void } = $props();
+    let {}: {} = $props();
 
     interface Package {
         type: "monthly" | "annual";
@@ -279,7 +280,8 @@
                         </p>
 
                         <button
-                            onclick={openModal}
+                            onclick={() =>
+                                goto(`/platba-clenstvi?plan=${pkg.type}`)}
                             class="group relative mt-5 w-[85%] py-2 bg-[#FFC300] text-black text-[18px] font-bold rounded-[10px] shadow-[0_0_20px_rgba(255,195,0,0.25)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
                         >
                             <span class="relative z-10">{pkg.buttonText}</span>
@@ -465,13 +467,7 @@
             box-shadow: 0px 0px 120px 0px rgba(255, 186, 0, 0.15);
         }
     }
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+
     .gold-gradient-text {
         background: linear-gradient(to bottom, #d3c295, #c9a44a);
         -webkit-background-clip: text;

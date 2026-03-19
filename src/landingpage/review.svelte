@@ -491,13 +491,6 @@
 </section>
 
 <style>
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
     .shadow-white-glow {
         box-shadow: 0px 0px 79.4px 0px rgba(255, 255, 255, 0.12);
     }

@@ -80,9 +80,9 @@
             <div class="flex items-center justify-center w-full mb-5">
                 <div class="flex-1 flex justify-end">
                     <img
-                        src="/assets/addpics/lclogo.png"
-                        alt="LC Logo"
-                        class="w-[48px] h-[72px] md:w-[53px] md:h-[80px] mr-[42px] md:mr-[130px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        src="/assets/addpics/cclogo.png"
+                        alt="Czech Crunch Logo"
+                        class="h-[30px] md:h-[40px] w-auto mr-[25px] md:mr-[130px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>

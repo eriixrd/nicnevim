@@ -64,19 +64,24 @@
             <!-- Legal Links -->
             <div class="flex flex-col gap-3">
                 <a
-                    href="https://www.nicnevim.online/op"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/obchodni-podminky"
+                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
+                >
+                    Obchodní podmínky
+                </a>
+                <a
+                    href="/zasady-ochrany-osobnich-udaju"
                     class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
                 >
                     Zásady ochrany osobních údajů
                 </a>
-                <a
-                    href="/nastaveni-cookies"
-                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
+                <button
+                    type="button"
+                    class="text-left text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors bg-transparent border-none p-0 cursor-pointer"
+                    onclick={() => window.openCookieSettings?.()}
                 >
                     Nastavení cookies
-                </a>
+                </button>
             </div>
         </div>
     </div>

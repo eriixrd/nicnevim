@@ -20,6 +20,9 @@
 		"target": "es2015"
 	},
 	"include": [
+		".svelte-kit/ambient.d.ts",
+		".svelte-kit/non-ambient.d.ts",
+		".svelte-kit/types/**/$types.d.ts",
 		"src/**/*.js",
 		"src/**/*.ts",
 		"src/**/*.svelte"

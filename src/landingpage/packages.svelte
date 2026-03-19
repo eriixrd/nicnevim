@@ -46,7 +46,7 @@
             buttonText: "Pořídit roční členství",
             icon: "/assets/icons/Gold.png",
             tagSymbol: "💰",
-            tagText: "Ušetříte 18%",
+            tagText: "2 měsíce zdarma",
             accentColor: "rgba(255, 186, 0, 0.12)",
             shadowClass: "shadow-yellow-glow",
             gradientBorder: "from-[#FFBA00]/50 via-transparent to-[#FFBA00]/50",

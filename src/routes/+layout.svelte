@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "../app.css";
+	import CookieConsent from "../components/CookieConsent.svelte";
 	const favicon = "/favicon/favicon.svg";
 </script>
 
@@ -22,10 +23,12 @@
 	<slot />
 </main>
 
+<CookieConsent />
+
 <style>
 	:global(html),
 	:global(body) {
-		background-color: #000000 !important;
+		background-color: #ffffff !important;
 		margin: 0;
 		padding: 0;
 	}
