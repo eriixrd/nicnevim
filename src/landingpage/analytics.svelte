@@ -299,7 +299,7 @@
         ></div>
 
         <h2
-            class="z-10 max-w-[950px] px-4 text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
+            class="z-10 max-w-[950px] text-center text-[35px] md:text-[40px] text-white font-extrabold leading-tight"
         >
             <span class="md:hidden">
                 Právě tato <br />

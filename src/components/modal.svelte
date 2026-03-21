@@ -8,7 +8,7 @@
 
     let name = $state("");
     let email = $state("");
-    let step = $state("info"); // 'info' or 'payment'
+    let step = $state("info"); // 'info', 'payment', or 'success'
 
     function close() {
         isOpen = false;
@@ -16,9 +16,23 @@
         if (onClose) onClose();
     }
 
-    function goToPayment() {
+    async function goToPayment() {
         if (name.trim() !== "" && email.trim() !== "") {
-            step = "payment";
+            // --- ECOMAIL PŘÍPRAVA (Jedná se o předlohu) ---
+            // Zde voláme náš API endpoint, který se postará o odeslání do Ecomailu.
+            try {
+                const response = await fetch('/api/submit-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, source: 'modal_komunita' })
+                });
+                const result = await response.json();
+                console.log("Předloha odeslání do Ecomailu:", result);
+            } catch (error) {
+                console.error("Chyba při přípravě do Ecomailu:", error);
+            }
+            
+            step = "success";
         }
     }
 </script>
@@ -142,7 +156,7 @@
                         disabled={!name || !email}
                         class="group relative w-full max-w-[450px] mt-2 md:mt-4 py-3.5 md:py-4 bg-[#FFC300] text-black text-[18px] md:text-[20px] font-bold rounded-[15px] shadow-[0_0_25px_rgba(255,195,0,0.3)] cursor-pointer transition-all duration-200 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
                     >
-                        <span class="relative z-10">Pokračovat k platbě</span>
+                        <span class="relative z-10">Odeslat a rezervovat místo</span>
                         <div
                             class="absolute top-0 -left-[125%] w-[50%] h-full bg-linear-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] transition-all duration-700 ease-in-out group-hover:left-[125%]"
                         ></div>
@@ -161,7 +175,7 @@
                     >
                         Členství lze kdykoliv zrušit
                     </p>
-                {:else}
+                {:else if step === "payment"}
                     <!-- Step 2: Payment & Selection -->
                     <div class="w-full h-full min-h-screen lg:min-h-0">
                         <StripePayment
@@ -169,6 +183,25 @@
                             {email}
                             onStepBack={() => (step = "info")}
                         />
+                    </div>
+                {:else if step === "success"}
+                    <!-- Final Step: Success Message -->
+                    <div class="p-10 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-[#FFC300] rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h2 class="text-white text-[28px] md:text-[34px] font-extrabold text-center leading-tight mb-4">
+                            Úspěšně uloženo!
+                        </h2>
+                        <p class="text-white/60 text-[18px] md:text-[20px] text-center mb-8 leading-[150%]">
+                            Vaše údaje byly zachyceny a brzy vás budeme kontaktovat s dalšími informacemi (předloha odeslání na ecomail).
+                        </p>
+                        <button
+                            onclick={close}
+                            class="px-10 py-3.5 bg-white/10 text-white font-bold rounded-[15px] hover:bg-white/20 transition-all"
+                        >
+                            Zavřít
+                        </button>
                     </div>
                 {/if}
             </div>

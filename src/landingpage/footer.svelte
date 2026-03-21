@@ -64,13 +64,9 @@
             <!-- Legal Links -->
             <div class="flex flex-col gap-3">
                 <a
-                    href="/obchodni-podminky"
-                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
-                >
-                    Obchodní podmínky
-                </a>
-                <a
                     href="/zasady-ochrany-osobnich-udaju"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
                 >
                     Zásady ochrany osobních údajů

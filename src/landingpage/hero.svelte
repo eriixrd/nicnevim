@@ -60,7 +60,7 @@
             portfolia a detailní <br class="md:hidden" /> myšlenkové procesy.
         </p>
 
-        <div class="relative z-10 mx-auto mt-4 px-4 w-full md:max-w-[880px]">
+        <div class="relative z-10 mx-auto mt-5 px-4 w-full md:max-w-[880px]">
             <div
                 class="-z-10 absolute inset-0 bg-[#6633EE]/30 blur-[50px] md:blur-[80px] md:scale-100"
                 style="filter: blur(50px); -webkit-filter: blur(50px); will-change: transform; transform: translate3d(0, 0, 0);"
@@ -86,25 +86,25 @@
                     <img
                         src="/assets/addpics/cclogo.png"
                         alt="Czech Crunch Logo"
-                        class="h-[30px] md:h-[40px] w-auto mr-[25px] md:mr-[130px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        class="h-[40px] md:h-[60px] w-auto mr-[40px] md:mr-[130px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>
 
                 <div class="flex-none">
                     <img
-                        src="/assets/addpics/forbeslogo.png"
-                        alt="Forbes Logo"
-                        class="w-[152px] h-[39px] md:w-[169px] md:h-[43px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        src="/assets/addpics/LC_logo_blackBG_02 2.png"
+                        alt="LC Logo"
+                        class="w-[40px] md:w-[63px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>
 
                 <div class="flex-1 flex justify-start">
                     <img
-                        src="/assets/addpics/oklogo.png"
-                        alt="OK Logo"
-                        class="w-[57px] h-[40px] md:w-[63px] md:h-[44px] ml-[34px] md:ml-[120px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
+                        src="/assets/addpics/forbeslogo.png"
+                        alt="Forbes Logo"
+                        class="w-[100px] h-auto md:w-[169px] ml-[34px] md:ml-[120px] opacity-70 hover:opacity-100 transition-all duration-300 select-none pointer-events-none"
                         draggable="false"
                     />
                 </div>
@@ -116,7 +116,7 @@
                         .getElementById("packages")
                         ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                class="group relative px-13 py-3.5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
+                class="group relative px-13 py-3.5 mt-5 bg-[#FFC300] text-[#000000] text-[18px] font-bold rounded-[10px] shadow-[0_0_25px_rgba(254,194,1,0.2)] cursor-pointer transition-all duration-200 hover:scale-105 overflow-hidden"
             >
                 <span class="relative z-10">Chci vědět víc!</span>
                 <div

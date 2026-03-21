@@ -71,12 +71,6 @@
                 >
                     Zásady ochrany osobních údajů
                 </a>
-                <a
-                    href="/obchodni-podminky"
-                    class="text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors"
-                >
-                    Všeobecné obchodní podmínky
-                </a>
                 <button
                     type="button"
                     class="text-left text-white text-[12px] underline decoration-white/30 underline-offset-4 hover:decoration-white transition-colors bg-transparent border-none p-0 cursor-pointer"

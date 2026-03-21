@@ -984,12 +984,10 @@
                 <p class="text-center text-[13px] text-gray-400">
                     Odesláním platby souhlasíte s <a
                         href="/obchodni-podminky"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="underline hover:text-gray-600 transition-colors"
-                        >obchodními podmínkami</a
-                    > a <a
-                        href="/zasady-ochrany-osobnich-udaju"
-                        class="underline hover:text-gray-600 transition-colors"
-                        >zásadami ochrany osobních údajů</a
+                        >všeobecnými obchodními podmínkami</a
                     >.
                 </p>
 

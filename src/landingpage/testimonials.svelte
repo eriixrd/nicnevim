@@ -54,42 +54,12 @@
 
     let isScrollingProgrammatically = $state(false);
 
-    // Custom easing function for a premium slide feel
-    function easeOutQuart(t: number) {
-        return 1 - --t * t * t * t;
-    }
-
-    function animateScroll(target: number, duration: number) {
-        if (!scrollContainer) return;
-        const start = scrollContainer.scrollLeft;
-        const change = target - start;
-        let startTime: number | null = null;
-
-        isScrollingProgrammatically = true;
-
-        function animation(currentTime: number) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-
-            scrollContainer.scrollLeft =
-                start + change * easeOutQuart(progress);
-
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animation);
-            } else {
-                isScrollingProgrammatically = false;
-            }
-        }
-
-        requestAnimationFrame(animation);
-    }
-
     function handleScroll() {
         if (isScrollingProgrammatically || !scrollContainer) return;
 
         const currentScroll = scrollContainer.scrollLeft;
-        const itemWidth = (isDesktop ? 425 : 340) + gap;
+        const currentWidth = isDesktop ? 425 : 340;
+        const itemWidth = currentWidth + gap;
         const newIndex = Math.round(currentScroll / itemWidth);
 
         if (
@@ -101,19 +71,25 @@
         }
     }
 
+    // Scroll to specific index using native smooth scrolling for maximum performance
     function scrollTo(index: number) {
         if (!scrollContainer) return;
-
-        // Loop index
-        if (index < 0) index = totalPages - 1;
-        if (index >= totalPages) index = 0;
+        if (index < 0 || index >= totalPages) return; // Disable looping
 
         currentIndex = index;
-
         const currentWidth = isDesktop ? 425 : 340;
         const targetLeft = index * (currentWidth + gap);
 
-        animateScroll(targetLeft, 600); // 600ms for visible slide animation
+        isScrollingProgrammatically = true;
+        scrollContainer.scrollTo({
+            left: targetLeft,
+            behavior: "smooth"
+        });
+
+        // Reset the programmatic flag after the scroll is likely finished
+        setTimeout(() => {
+            isScrollingProgrammatically = false;
+        }, 600);
     }
 
     function next() {
@@ -184,8 +160,8 @@
     >
         <!-- Background Glow -->
         <div
-            class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/25 blur-[150px] pointer-events-none z-0"
-            style="filter: blur(150px); -webkit-filter: blur(150px); will-change: filter, transform; transform: translate3d(0, 0, 0);"
+            class="absolute top-1/2 left-1/2 w-[250px] h-[750px] md:w-[750px] md:h-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#AFAAFF]/20 blur-[100px] pointer-events-none z-0"
+            style="will-change: transform; transform: translate3d(0, 0, 0); perspective: 1000px; backface-visibility: hidden;"
         ></div>
 
         <!-- Header Content -->
@@ -213,7 +189,7 @@
             <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
             <div
                 bind:this={scrollContainer}
-                class="carousel flex overflow-x-auto no-scrollbar py-4"
+                class="carousel flex overflow-x-auto no-scrollbar py-4 overscroll-x-contain"
                 onmousedown={handleMouseDown}
                 onscroll={handleScroll}
                 role="region"
@@ -223,7 +199,7 @@
                     : 'grab'}; user-select: none; scroll-snap-type: {isDragging ||
                 isScrollingProgrammatically
                     ? 'none'
-                    : 'x mandatory'};"
+                    : 'x mandatory'}; -webkit-overflow-scrolling: touch;"
             >
                 <div
                     class="carousel-body flex gap-3 xl:gap-6 w-max pl-5 pr-5 xl:pl-[max(0px,calc(50%-650px))] xl:pr-[max(0px,calc(50%-650px))] opacity-100"
@@ -232,7 +208,7 @@
                         <!-- Slide -->
                         <div
                             class="carousel-slide shrink-0 w-[340px] xl:w-[425px] flex flex-col gap-3 xl:gap-6"
-                            style="scroll-snap-align: center;"
+                            style="scroll-snap-align: center; will-change: transform; transform: translate3d(0,0,0); backface-visibility: hidden;"
                         >
                             {#each group as itemNumber}
                                 <!-- Image -->
@@ -274,25 +250,25 @@
             <div class="flex gap-4 pb-5">
                 <button
                     onclick={prev}
-                    class="cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none"
+                    class="cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none {currentIndex === 0 ? 'opacity-30 cursor-not-allowed pointer-events-none' : 'opacity-80'}"
                     aria-label="Previous testimonials"
                 >
                     <img
                         src="/assets/icons/Arrow.png"
                         alt="Previous"
-                        class="w-[50px] h-[50px] opacity-80 pointer-events-none"
+                        class="w-[50px] h-[50px] pointer-events-none"
                         style="filter: invert(1) brightness(1.8); transform: scaleX(-1);"
                     />
                 </button>
                 <button
                     onclick={next}
-                    class="cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none"
+                    class="cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 select-none outline-none focus:outline-none {currentIndex >= totalPages - 1 ? 'opacity-30 cursor-not-allowed pointer-events-none' : 'opacity-80'}"
                     aria-label="Next testimonials"
                 >
                     <img
                         src="/assets/icons/Arrow.png"
                         alt="Next"
-                        class="w-[50px] h-[50px] opacity-80 pointer-events-none"
+                        class="w-[50px] h-[50px] pointer-events-none"
                         style="filter: invert(1) brightness(1.8);"
                     />
                 </button>

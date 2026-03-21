@@ -32,7 +32,7 @@
                 "Sledujte všechny mé obchody<br />v reálném čase",
                 "Přístup k celému mému portfoliu",
                 "Můj aktuální pohled na trhy<br />(týdenní video-update)",
-                "Watchlist 50+ firem & Ceny<br />na kterých plánuji obchodovat",
+                "Watchlist zajimavých firem & Ceny<br />na kterých plánuji obchodovat",
                 "Data z Bloomberg terminálu<br />(valuace, výhledy & Fundament)",
                 "Návody, jak vše aplikovat v praxi",
                 "Osobní přístup ode mě a mého týmu",
